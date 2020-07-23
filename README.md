@@ -5,12 +5,12 @@
 - [ ] Calendar page
   - Each day populates with events (from an API)
   - Clicking on a day will show all events for that day (which can be favorited)
-- Profile page 
+- [ ] Profile page 
   - Name
   - Email
   - Favorited events / amount(counter)
   - Profile pic
-- Favorite page
+- [ ] Favorite page
 
 ## Stretch Goal
 - Mobile friendly
@@ -23,37 +23,37 @@
 
 ### Team Members(daily/Items we want to get done)
     Thomas
-        [] D1
-        [] D2
-        [] D3
-        [] D4
-        [] D5
-        [] D6
-        [] D7
+        - [ ]  D1
+        - [ ]  D2
+        - [ ]  D3
+        - [ ]  D4
+        - [ ]  D5
+        - [ ]  D6
+        - [ ]  D7
     Louis    
-        [] D1
-        [] D2
-        [] D3
-        [] D4
-        [] D5
-        [] D6
-        [] D7
+        - [ ]  D1
+        - [ ]  D2
+        - [ ]  D3
+        - [ ]  D4
+        - [ ]  D5
+        - [ ]  D6
+        - [ ]  D7
     Jimmy
-        [] D1
-        [] D2
-        [] D3
-        [] D4
-        [] D5
-        [] D6
-        [] D7
+        - [ ]  D1
+        - [ ]  D2
+        - [ ]  D3
+        - [ ]  D4
+        - [ ]  D5
+        - [ ]  D6
+        - [ ]  D7
     Nesso
-        [] D1
-        [] D2
-        [] D3
-        [] D4
-        [] D5
-        [] D6
-        [] D7
+        - [ ]  D1
+        - [ ]  D2
+        - [ ]  D3
+        - [ ]  D4
+        - [ ]  D5
+        - [ ]  D6
+        - [ ]  D7
 # Issues - Anything that is taking some time and should be noted!
 - 
 - 
