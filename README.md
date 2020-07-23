@@ -2,7 +2,7 @@
 
 ## MVP
 ### Current User Experience
-- Calendar page
+- [ ] Calendar page
   - Each day populates with events (from an API)
   - Clicking on a day will show all events for that day (which can be favorited)
 - Profile page 
@@ -64,7 +64,7 @@
 
 ## Landing Page
 ![](/public/wireframe/Landing-Page-Wireframe.png)
-## Main Calendat Page
+## Main Calendar Page
 ![](/public/wireframe/Main-Page-Wireframe.png)
 ## Event Page
 ![](/public/wireframe/Event-Page-Wireframe.png)
