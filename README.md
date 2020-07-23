@@ -61,11 +61,11 @@
 # Meetups
 
 # Wireframes
-![](`/public/wireframe/Event Page Wireframe.png`)
-![](`/public/wireframe/Favorites Page Wireframe.png`)
-![](`/public/wireframe/Landing Page Wireframe.png`)
-![](`/public/wireframe/Main Page Wireframe.png`)
-![](`/public/wireframe/Profile Page Wireframe.png`)
+![](/public/wireframe/Event-Page-Wireframe.png)
+![](/public/wireframe/Favorites-Page-Wireframe.png)
+![](/public/wireframe/Landing-Page-Wireframe.png)
+![](/public/wireframe/Main-Page-Wireframe.png)
+![](/public/wireframe/Profile-Page-Wireframe.png)
 
 # ERD
 https://app.diagrams.net/?libs=general;er#G1rdZQrbXQxvStXyV9P8d1gnk8CbRNvxCt
