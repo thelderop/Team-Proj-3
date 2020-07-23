@@ -1,7 +1,7 @@
-# App Details
 # Event Finder
-# MVP
-### current user experience
+
+## MVP
+### Current User Experience
 [] Calendar page
     [] Each day populates with events (from an API)
     [] Clicking on a day will show all events for that day (which can be favorited)
@@ -12,16 +12,24 @@
     [] Profile pic
 [] Favorite page
 
-# Stretch Goal
+## Stretch Goal
 [] Mobile friendly
     [] favorite page be more vertical 
-[] Tracks age and DoB for alerts
-[] click ona venue
+[] Tracks age and Date of Birth for alerts
+[] click on a venue
     [] once clicked load venues calendar
 [] map box
 
-# Team Members(daily/Items we want to get done)
-    ## Thomas
+### Team Members(daily/Items we want to get done)
+    Thomas
+        - [] D1
+        - [] D2
+        - [] D3
+        - [] D4
+        [] D5
+        [] D6
+        [] D7
+    Louis    
         [] D1
         [] D2
         [] D3
@@ -29,7 +37,7 @@
         [] D5
         [] D6
         [] D7
-    ## Louis    
+    Jimmy
         [] D1
         [] D2
         [] D3
@@ -37,7 +45,7 @@
         [] D5
         [] D6
         [] D7
-    ## Jimmy
+    Nesso
         [] D1
         [] D2
         [] D3
@@ -45,27 +53,22 @@
         [] D5
         [] D6
         [] D7
-    ## Nesso
-        [] D1
-        [] D2
-        [] D3
-        [] D4
-        [] D5
-        [] D6
-        [] D7
+# Issues - Anything that is taking some time and should be noted!
 
-# Checklist
-
-# Issues
-
-# Meetups
+# Meetups (Scheduled Meeting times/Might not be used)
 
 # Wireframes
-![](/public/wireframe/Event-Page-Wireframe.png)
-![](/public/wireframe/Favorites-Page-Wireframe.png)
-![](/public/wireframe/Landing-Page-Wireframe.png)
-![](/public/wireframe/Main-Page-Wireframe.png)
-![](/public/wireframe/Profile-Page-Wireframe.png)
 
-# ERD
+## Landing Page
+![](/public/wireframe/Landing-Page-Wireframe.png)
+## Main Calendat Page
+![](/public/wireframe/Main-Page-Wireframe.png)
+## Event Page
+![](/public/wireframe/Event-Page-Wireframe.png)
+## User Profile Page
+![](/public/wireframe/Profile-Page-Wireframe.png)
+## Users Favortied Page
+![](/public/wireframe/Favorites-Page-Wireframe.png)
+
+## ERD
 https://app.diagrams.net/?libs=general;er#G1rdZQrbXQxvStXyV9P8d1gnk8CbRNvxCt
