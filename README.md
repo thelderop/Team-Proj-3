@@ -74,4 +74,4 @@
 ![](/public/wireframe/Favorites-Page-Wireframe.png)
 
 ## ERD
-https://app.diagrams.net/?libs=general;er#G1rdZQrbXQxvStXyV9P8d1gnk8CbRNvxCt
+https://drive.google.com/file/d/1rdZQrbXQxvStXyV9P8d1gnk8CbRNvxCt/view?usp=sharing
