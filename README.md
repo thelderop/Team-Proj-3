@@ -2,30 +2,31 @@
 
 ## MVP
 ### Current User Experience
-[] Calendar page
-    [] Each day populates with events (from an API)
-    [] Clicking on a day will show all events for that day (which can be favorited)
-[] Profile page 
-    [] Name
-    [] Email
-    [] Favorited events / amount(counter)
-    [] Profile pic
-[] Favorite page
+- Calendar page
+  - Each day populates with events (from an API)
+  - Clicking on a day will show all events for that day (which can be favorited)
+- Profile page 
+  - Name
+  - Email
+  - Favorited events / amount(counter)
+  - Profile pic
+- Favorite page
 
 ## Stretch Goal
-[] Mobile friendly
-    [] favorite page be more vertical 
-[] Tracks age and Date of Birth for alerts
-[] click on a venue
-    [] once clicked load venues calendar
-[] map box
+- Mobile friendly
+  - favorite page be more vertical 
+- Tracks age and Date of Birth for alerts
+- Click on a venue
+  - once clicked load venues calendar
+- Map Box 
+  - Venue Locations for events
 
 ### Team Members(daily/Items we want to get done)
     Thomas
-        - [] D1
-        - [] D2
-        - [] D3
-        - [] D4
+        [] D1
+        [] D2
+        [] D3
+        [] D4
         [] D5
         [] D6
         [] D7
@@ -54,9 +55,11 @@
         [] D6
         [] D7
 # Issues - Anything that is taking some time and should be noted!
-
+- 
+- 
+- 
 # Meetups (Scheduled Meeting times/Might not be used)
-
+- 
 # Wireframes
 
 ## Landing Page
