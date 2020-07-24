@@ -1,0 +1,20 @@
+Name
+dob
+email
+Profile pic
+
+event
+    zip, city, 
+
+
+attended event
+    location - API
+
+favorite
+    location - API
+
+upcomming
+    location - API
+
+
+    
