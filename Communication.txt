@@ -1,0 +1,10 @@
+Dont forget to:
+npm i dotenv
+touch .env
+add your API_KEY=sweetapikey to the .env
+
+Take a breather!
+    We are going to do great!
+    You're doing great!
+    Keep on smiling
+    Ask for help if you're in need! 
