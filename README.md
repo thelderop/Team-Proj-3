@@ -79,8 +79,8 @@
   - Discussion of implementation of the application
   - Basic field to populate the database 
   - General discussion
-    - set the first 2 days of work to designate jobs as well as who may be helping
-      - 
+    - Set the first 2 days of work to designate jobs as well as who may be helping
+      - Git master branch was updated from Jimmy and Nesso 
 
 - [ ] Meeting 2
 - [ ] Meeting 3

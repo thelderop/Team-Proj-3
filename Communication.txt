@@ -1,7 +1,8 @@
 Dont forget to:
-npm i dotenv
+npm i dotenv react-router-dom
 touch .env
 add your API_KEY=sweetapikey to the .env
+
 
 Take a breather!
     We are going to do great!
