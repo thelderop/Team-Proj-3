@@ -86,7 +86,8 @@
   - After Auth Class
     - Went over and discussed minute styling discussing dropdown menus etc
   - Made a repo for the back end to allow Louis to have some starter to alter 
-  - 
+  - Adjusted index.js and app.js to better follow todays lesson 
+    - hopefully will be adjusted based on group knowledge!
 
 - [ ] Meeting 3
 

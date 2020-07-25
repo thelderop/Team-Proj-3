@@ -1,6 +1,7 @@
 Dont forget to:
 npm i dotenv react-router-dom
 touch .env
+npm install react-bootstrap bootstrap (if we are using it)
 add your API_KEY=sweetapikey to the .env
 
 
