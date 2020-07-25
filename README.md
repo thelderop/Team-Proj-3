@@ -45,7 +45,6 @@
         - [ ]  D4
         - [ ]  D5
         - [ ]  D6
-        - [ ]  D7
     Louis - Back-end setup dev
         - [ ]  D1 DB start up
         - [ ]  D2 DB set up
@@ -53,7 +52,6 @@
         - [ ]  D4
         - [ ]  D5
         - [ ]  D6
-        - [ ]  D7
     Jimmy - Front-end design/routing
         - [ ]  D1 Routing
         - [ ]  D2 Routing
@@ -61,7 +59,6 @@
         - [ ]  D4
         - [ ]  D5
         - [ ]  D6
-        - [ ]  D7
     Nesso - Bouncer(help where needed)
         - [ ]  D1 Help louis
         - [ ]  D2 Help louis
@@ -69,10 +66,10 @@
         - [ ]  D4
         - [ ]  D5
         - [ ]  D6
-        - [ ]  D7
 # Issues - Anything that is taking some time and should be noted!
 - With auth being a broken item as of the weekend we were going to have to avoid it until monday and then throw it into the starter code
-- 
+- Jimmy discovered early on that the calendar was going to be in its self a challenge
+  - We exchanged some messages toward that regard
 - 
 # Meetups (Scheduled Meeting times/Might not be used)
 - [X] Meeting 1 7/23

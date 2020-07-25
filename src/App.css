@@ -47,3 +47,29 @@ footer {
   text-align: center;
   padding: .25em;
 }
+.navbar {
+  display: flex;
+  text-align: center;
+  width: fit-content;
+  width: 100%;
+  background-color: rgba(0, 255, 255, .45);
+  height: 5vh;
+}
+.navcont {
+display: flex;
+justify-content: space-between;
+width: 100%;
+}
+.leftnav {
+  margin-top: 1vh;
+  margin-left: 10vh;
+
+}
+.centernav {
+margin-top: 1vh;
+}
+.rightnav {
+margin-top: 1vh;
+margin-right: 10vh;
+
+}
