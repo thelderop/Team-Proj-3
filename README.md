@@ -71,7 +71,7 @@
         - [ ]  D6
         - [ ]  D7
 # Issues - Anything that is taking some time and should be noted!
-- 
+- With auth being a broken item as of the weekend we were going to have to avoid it until monday and then throw it into the starter code
 - 
 - 
 # Meetups (Scheduled Meeting times/Might not be used)
@@ -82,7 +82,12 @@
     - Set the first 2 days of work to designate jobs as well as who may be helping
       - Git master branch was updated from Jimmy and Nesso 
 
-- [ ] Meeting 2
+- [X] Meeting 2 7/24
+  - After Auth Class
+    - Went over and discussed minute styling discussing dropdown menus etc
+  - Made a repo for the back end to allow Louis to have some starter to alter 
+  - 
+
 - [ ] Meeting 3
 
 # Wireframes

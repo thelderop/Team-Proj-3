@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
     return (
         <footer>
-            Site designed by: Thomas, Louis, Jimmy, Nesso ©2020 GA SEIR526
+            Site designed by: Thomas, Louis, Jimmy, Nesso ©2020 GA SEIR526 
         </footer>
     );
 };
