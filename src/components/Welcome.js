@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Header() {
+export default function Welcome() {
     return (
         <>
-        <h1>Header</h1>
+        <h1>Welcome</h1>
         </>
     )
 }
