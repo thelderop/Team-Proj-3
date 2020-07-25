@@ -1,6 +1,7 @@
 Name
 dob
 email
+password
 Profile pic
 
 event
