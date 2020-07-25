@@ -10,3 +10,11 @@ Take a breather!
     You're doing great!
     Keep on smiling
     Ask for help if you're in need! 
+
+How do I push to the Master branch?
+git push origin master - then do a pull request (then yell at Nesso)
+
+How do I get up to date with the Master?
+
+git pull upstream master
+
