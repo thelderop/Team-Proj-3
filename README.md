@@ -54,9 +54,9 @@
         - [ ]  D5
         - [ ]  D6
     Jimmy - Front-end design/routing
-        - [X]  D1 Routing
-        - [ ]  D2 Routing
-        - [ ]  D3
+        - [X]  D1 Initial planning for front-end
+        - [X]  D2 Touch base with team + decompress Friday
+        - [X]  D3 Scaffolding and CSS foundation laid
         - [ ]  D4
         - [ ]  D5
         - [ ]  D6
