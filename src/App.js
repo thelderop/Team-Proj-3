@@ -18,7 +18,7 @@ function App() {
       <div className="react-router-logic">
       <Switch>
           <Route path='/calendar' component={ Calendar } />
-          <Route path='/login' component={ Login } /> } /> 
+          <Route path='/login' component={ Login } /> 
           <Route path='/favorites' component={ Favorites } />
           <Route path='/profile' component={ Profile } />
           <Route path='/' component={ Welcome } />
