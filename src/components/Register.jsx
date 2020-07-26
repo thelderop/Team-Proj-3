@@ -37,31 +37,31 @@ const Signup = () => {
                     <form action="/ideas" method="post" /*onSubmit={handleSubmit}*/>
                         <div className="form-group">
                             <label htmlFor="name">Name:</label>
-                            <input type="text" name="name" /*value={name} onInput={handleName}*/ className="form-control" />
+                            <input type="text" name="name" /*value={name} onInput={handleName}*/ className="form-control" placeholder='Name'/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="email">Email:</label>
-                            <input type="email" name="email" /*value={email} onInput={handleEmail}*/ className="form-control" />
+                            <input type="email" name="email" /*value={email} onInput={handleEmail}*/ className="form-control" placeholder='Email'/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="address">Address:</label>
-                            <input type="address" name="address" /*value={address} onInput={handleAddress}*/ className="form-control" />
+                            <input type="address" name="address" /*value={address} onInput={handleAddress}*/ className="form-control" placeholder='Address'/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="city">City:</label>
-                            <input type="city" name="city" /*value={city} onInput={handleCity}*/ className="form-control" />
+                            <input type="city" name="city" /*value={city} onInput={handleCity}*/ className="form-control" placeholder='City'/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="state">State:</label>
-                            <input type="state" name="state" /*value={state} onInput={handleState}*/ className="form-control" />
+                            <input type="state" name="state" /*value={state} onInput={handleState}*/ className="form-control" placeholder='State'/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="zipcode">Zipcode:</label>
-                            <input type="zipcode" name="zipcode" /*value={zipcode} onInput={handleZipcode}*/ className="form-control" />
+                            <input type="zipcode" name="zipcode" /*value={zipcode} onInput={handleZipcode}*/ className="form-control" placeholder='Zipcode'/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password:</label>
-                            <input type="password" name="password" /*value={password} onInput={handlePassword}*/ className="form-control" />
+                            <input type="password" name="password" /*value={password} onInput={handlePassword}*/ className="form-control" placeholder='Password'/>
                         </div>
                         {/* <div className="form-group">
                             <label htmlFor="password2">Confirm Password: Might remove - was j</label>
