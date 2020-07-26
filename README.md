@@ -21,6 +21,7 @@
   - Email
   - Favorited events / amount(counter)
   - Profile pic
+  - Address
 - [ ] Favorite page
 - [ ] Search Bar functionality
   - Location
@@ -39,7 +40,7 @@
 
 ### Team Members(daily/Items we want to get done)
     Thomas - Front-end css/etc
-        - [ ]  D1 CSS
+        - [X]  D1 CSS
         - [ ]  D2 CSS
         - [ ]  D3
         - [ ]  D4
@@ -53,7 +54,7 @@
         - [ ]  D5
         - [ ]  D6
     Jimmy - Front-end design/routing
-        - [ ]  D1 Routing
+        - [X]  D1 Routing
         - [ ]  D2 Routing
         - [ ]  D3
         - [ ]  D4
@@ -86,7 +87,19 @@
   - Adjusted index.js and app.js to better follow todays lesson 
     - hopefully will be adjusted based on group knowledge!
 
-- [ ] Meeting 3
+- [X] Meeting 3 7/25
+-  Saturday
+ - Edited some css
+ - Discussed some planning 
+ - delegated more tasks 
+ - lowered more expectations 
+- Finally got solid footing to begin
+- did actual beginning
+
+- [ ] Meeting 4
+
+- [ ] Meeting 5
+
 
 # Wireframes
 

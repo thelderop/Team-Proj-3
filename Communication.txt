@@ -11,10 +11,24 @@ Take a breather!
     Keep on smiling
     Ask for help if you're in need! 
 
+
+
 How do I push to the Master branch?
 git push origin master - then do a pull request (then yell at Nesso)
+
 
 How do I get up to date with the Master?
 
 git pull upstream master
 
+
+
+I am having issues with git pulling?!?! HALP
+
+Git stash
+
+- this will stash the commits on your pc if you are just pulling
+
+Then use the 
+
+git pull upstream master
