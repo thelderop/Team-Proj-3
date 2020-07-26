@@ -7,7 +7,7 @@ import Login from './components/Login'
 import Profile from './components/Profile'
 import Welcome from './components/Welcome'
 import Navigation from './wrappers/Navigation'
-import Content from './content/content'
+import Register from './components/Register'
 import Footer from './wrappers/Footer'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -16,12 +16,13 @@ function App() {
     <div>
       <Navigation />
       <div className="react-router-logic">
-      <Switch>
-          <Route path='/calendar' component={ Calendar } />
-          <Route path='/login' component={ Login } /> 
-          <Route path='/favorites' component={ Favorites } />
-          <Route path='/profile' component={ Profile } />
-          <Route path='/' component={ Welcome } />
+        <Switch>
+          <Route path='/calendar' component={Calendar} />
+          <Route path='/login' component={Login} />
+          <Route path='/favorites' component={Favorites} />
+          <Route path='/profile' component={Profile} />
+          <Route path='/register' component={Register} />
+          <Route path='/' component={Welcome} />
         </Switch>
       </div>
       <Footer />
