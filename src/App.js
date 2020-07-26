@@ -7,9 +7,8 @@ import Login from './components/Login'
 import Profile from './components/Profile'
 import Welcome from './components/Welcome'
 import Navigation from './wrappers/Navigation'
-import Header from './wrappers/Header'
-import Footer from './wrappers/Footer'
 import Content from './content/content'
+import Footer from './wrappers/Footer'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -25,8 +24,6 @@ function App() {
           <Route path='/' component={ Welcome } />
         </Switch>
       </div>
-      <Header />
-      <Content />
       <Footer />
     </div>
   );
