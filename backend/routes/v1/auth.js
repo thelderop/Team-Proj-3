@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
         .then(users => {
             res.send(users)
         })
-        .catch(err => console.error(err))
+        .catch(err => console.log(err))
 })
 
 //find a user by email (unique according to Schema rules)
@@ -38,7 +38,7 @@ router.get('/findByEmail/:email', (req, res) => {
 
 //a fun test function to test connectivity with postman
 router.get('/test', function (req, res) {
-    console.log(`successfully connected to backend!!!!!!!!`)
+    console.log(`successfully connected to backend!!!!!!!! auth.js`)
 })
 
 //modified from AZocher's mern-auth codealong

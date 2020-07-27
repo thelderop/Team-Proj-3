@@ -4,9 +4,15 @@ const db = require('../../models')
 
 //Get Favorites
 router.get('/', (req, res) => {
-    db.Favorite.findAll(favorites => {
+    db.Favorite.find()
+        .then(favorites => {
         res.send(favorites)
     })
+    .catch(err => console.log(err))
+})
+
+router.get('/test', function (req, res) {
+    console.log(`successfully connected to backend!!!!!!!! favorites.js`)
 })
 
 // GET inevidial event
@@ -14,7 +20,30 @@ router.get('/:id', (req, res) => {
     db.Event.findById(req.params.id)
         .then((favorite) => {
             res.send(favorite)
-        }).catch(err => console.log('favorite.js ln 17'))
+        }).catch(err => console.log('err in GET request favorite.js'))
+})
+
+
+// CREATE favorite within database
+router.post('/addFavorite', (req,res) => {
+    let eventTitle = req.body.title
+    db.Favorite.findOne({ title: eventTitle})
+    .then(favorite => {
+        if (favorite) {
+            return console.log('error, favorite already exists in collection')
+        } else {
+            const newFavorite = new Favorite({
+                title: req.body.title,
+                location: req.body.location,
+                date: req.body.date,
+                description: req.body.description,
+                // userId: req.body.userId
+            })
+            newFavorite.save()
+            .then(fave => res.json(fave))
+        }
+    })
+    .catch(err => console.log(err))
 })
 
 //GET UPDATE
