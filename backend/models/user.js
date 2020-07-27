@@ -16,21 +16,21 @@ const UserSchema = new Schema({
     required: true,
   },
   avatar: {
-    type:String,
+    type: String,
   },
-//   zipCode: {
-//       type: Number,
-//       required: true,
-//   },
+  zipCode: {
+    type: Number,
+    required: true,
+  },
   DOB: {
-      type: Number,
-      required: true,
-        }
-    },
-    
-    {
-      timestamps: true
-    }   
+    type: Number,
+    required: true,
+  }
+},
+
+  {
+    timestamps: true
+  }
 );
 
 
@@ -55,8 +55,9 @@ module.exports = User = mongoose.model('users', UserSchema);
 //       type: String,
 //       required: true,
 //     },
-//     watchedBounties: [{
-//         type: mongoose.Types.ObjectId
+//     favedEvents: [{
+//         type: mongoose.Types.ObjectId,
+//         ref: 'Event'
 //     }],
 //     date: {
 //       type: Date,

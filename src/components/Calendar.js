@@ -41,7 +41,7 @@ export default function Calendar() {
         <div className="Calendar">
             <h1>Calendar</h1>
             <EventsDisplay events={events} />
-            {/* <p>{JSON.stringify(events)}</p> */}
+            {/* <p>{JSON.stringify(events)} </p> */}
         </div>
     )
 }
