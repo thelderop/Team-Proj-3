@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../seir526-mern-auth"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../units/unit_3/mongo-bounty-server"
+		},
+		{
+			"path": "../bounty-client"
+		},
+		{
+			"path": "../../units/unit_3/mongoose-referencing/final-code/mongoose-movies"
+		},
+		{
+			"path": "../../units/unit_3/mongoose-embedding"
+		}
+	],
+    "settings": {}
+}
