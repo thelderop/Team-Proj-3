@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//events Schema
-const FavoritessSchema = new Schema({
+//
+
+//favorites Schema
+const FavoritesSchema = new Schema({
     title: {
         type: String,
     },
@@ -16,6 +18,10 @@ const FavoritessSchema = new Schema({
     description: {
         type: String,
     },
+    userId: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
+    }],
 })
 
 

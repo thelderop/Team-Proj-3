@@ -22,12 +22,12 @@ const UserSchema = new Schema({
   DOB: {
       type: Date,
       required: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  },
-});
+        }
+    }, 
+    {
+      timestamps: true
+    }   
+);
 
 
 module.exports = User = mongoose.model('users', UserSchema);
