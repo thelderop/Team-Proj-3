@@ -17,6 +17,7 @@ const db = require('../../models')
 // get log people in and check their creds against existing user data
 //GET if already logged in, set user data to current
 
+//shows all documents in collection 'users'
 router.get('/', (req,res) => {
     db.User.find()
     .then(users => {
@@ -25,10 +26,22 @@ router.get('/', (req,res) => {
     .catch(err => console.error(err))
 })
 
+//find a user by email (unique according to Schema rules)
+router.get('/findByEmail/:email', (req,res) => {
+    db.User.find({email: req.params.email})
+    .then(user => {
+        console.log(user)
+    })
+    .catch(err => console.log(err))
+})
+
+
+//a fun test function to test connectivity with postman
 router.get('/test', function(req,res) {
     console.log(`successfully connected to backend!!!!!!!!`)
 })
 
+//modified from AZocher's mern-auth codealong
 // GET api/users/register (Public)
 router.post('/register', (req, res) => {
     // Find User By Email
@@ -68,5 +81,34 @@ router.post('/register', (req, res) => {
         }
     })
 });
+
+//updates a user, email is unique, 
+//TODO 0 passing {$set: reqBody} would be preferred to {name:req.body.name, ...}
+router.put('/updateByEmail/:email', (req,res) => {
+    // let reqBody = JSON.stringify(req.body)
+    // console.log(reqBody)
+    db.User.findOneAndUpdate(
+        {email: req.params.email},
+        // console.log(req.body)
+        //fix me
+        // {reqBody}
+        {name: req.body.name, email: req.body.email, password: req.body.password, DOB: req.body.DOB, zipCode: req.body.zipCode}
+        )
+        .then(updatedUser => {
+            res.send(updatedUser)
+        })
+        .catch(err => console.log(err))
+})
+
+
+//deletes user, no body argument is sent.
+router.delete('/deleteByEmail/:email', (req,res) => {
+    db.User.findOneAndDelete({email: req.params.email})
+    .then(deletedItem => {
+        console.log(deletedItem)
+        res.send({message: 'Successfully destroyed'})
+    })
+    .catch(err => console.log(err))
+})
 
 module.exports = router
