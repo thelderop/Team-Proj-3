@@ -11,6 +11,8 @@ import Navigation from './wrappers/Navigation'
 import Register from './components/Register'
 import Footer from './wrappers/Footer'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+
 // require('dotenv').config()
 // const express = require('express')
 // const cors = require('cors')

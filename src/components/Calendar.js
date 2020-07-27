@@ -39,19 +39,20 @@ export default function Calendar() {
     // }
 
     return (
-        <div class="row">
-            <div class="col-lg-4">
-                <EventsDisplay events={events} />
+        <div className="Calendar">
+            <h1>Calendar</h1>
+            <div class="row">
+                <div class="col-lg-4">
+                    <EventsDisplay events={events} />
+                </div>
+                <div class="col-lg-8">
+                    <FullCalendar
+                    plugins={[ dayGridPlugin ]}
+                    initialView="dayGridMonth"
+                    />
+                </div>
             </div>
-            <div class="col-lg-8">
-                <FullCalendar
-                plugins={[ dayGridPlugin ]}
-                initialView="dayGridMonth"
-                events={[
-                    { title: `${<EventsDisplay events={events} />}`, date: '2020-07-15' }
-                ]}
-                />
-            </div>
+            {/* <p>{JSON.stringify(events)} </p> */}
         </div>
     )
 }
