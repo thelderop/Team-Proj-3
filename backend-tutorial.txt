@@ -76,3 +76,14 @@ what's being sent to the backend, and how that data is interacting with the mong
 	
 	-Louis
 
+
+CURRENT ROUTES (/routes/v1/auth.js)
+
+'/' index of users
+'/findByEmail/:email' find one user by email
+'/register' create a new user based on user schema ../../models/user.js
+'/updateByEmail/:email' updates a user's info, it is recommended to require all fields
+'/deleteByEmail/:email' deletes a user document from collection, this path accepts no body args
+
+note that in postman this well be entered as localhose:3001/v1/auth/register (for example)
+
