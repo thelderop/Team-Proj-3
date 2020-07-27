@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import EventsDisplay from './EventsDisplay'
 import axios from 'axios';
-
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
 
 
 export default function Calendar() {
@@ -38,10 +39,19 @@ export default function Calendar() {
     // }
 
     return (
-        <div className="Calendar">
-            <h1>Calendar</h1>
-            <EventsDisplay events={events} />
-            {/* <p>{JSON.stringify(events)} </p> */}
+        <div class="row">
+            <div class="col-lg-4">
+                <EventsDisplay events={events} />
+            </div>
+            <div class="col-lg-8">
+                <FullCalendar
+                plugins={[ dayGridPlugin ]}
+                initialView="dayGridMonth"
+                events={[
+                    { title: `${<EventsDisplay events={events} />}`, date: '2020-07-15' }
+                ]}
+                />
+            </div>
         </div>
     )
 }
