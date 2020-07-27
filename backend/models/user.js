@@ -18,10 +18,10 @@ const UserSchema = new Schema({
   avatar: {
     type:String,
   },
-//   zipCode: {
-//       type: Number,
-//       required: true,
-//   },
+  zipCode: {
+      type: Number,
+      required: true,
+  },
   DOB: {
       type: Number,
       required: true,
