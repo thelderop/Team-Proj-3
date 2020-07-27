@@ -22,4 +22,5 @@ const EventsDisplay = (props) => {
         </div>
     );
 }
+
 export default EventsDisplay
