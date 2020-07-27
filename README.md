@@ -136,78 +136,76 @@ Nesso's meeting with Milcah -
 
 - [ ] 7/26 Sarahs sunday walkthrough 
 
-- [ ] 7/26 Sarahs sunday walkthrough 
+- 1)	Creating a model depends on the structures that is wanted
+- 2)	set up .env variables
+  - a)	add JWT_TOKEN='whatever it is'
+  - b)	CLIENT_URL=''
+  - c)	MONGODC_URI=''
+- 3)	those connect to the index.js
+- 4)	jsonwebtoken, bcrypt, passport and passport-jwt for backend
+  - a)	I should have had this done on the backend files already
+- 5)	Create a /config/passport.js file path
+- 6)	Sarah changed cosnt User from the mern auth to db to show we're referenceing the database
+- 7)	changed all uses of User in page
+- 8)	Make a user model - we have this i think Louis made a better one
+  - a)	Sarah adjusted the user.js from models to better work for her app
+    - i)	Why am I logging into this data base
+      - (1)	Are we favoriting them?
+      - (2)	are they for editing?
+  - b)	added a reference to the db
+    - i)	type array called watched bounties [{}]
+      - (1)	if we don’t remember how to link
+      - (2)	mongoose.Types.ObjectId (depends on the linked)
+- 9)	export a user model in the index .js
+- 10)	it will look similar to the other one except it is based on the db we are exporting
+- 11)	cors info???
+  - a)	nope lol
+- 12)	Add the middle ware under the home route
+  - a)	app.use and import all middleware that is going to be used
+  - b)	Sarah added a note to make some routing
+- 13)	added const passport = require('passport') ({the normal stuff})
+- 14)	making a v1 folder for the version type as more api esq 
+- 15)	app.use('/v1/auth', etc)
+- 16)	in users.js
+  - a)	we edited is 
+    - i)	removed gravatar
+    - ii)	added const db = require(filepath)
+    - iii)	adjusted email(message): to message: 'Email already exists' this is acting as the error for creating 
+  - b)	removed all essence of gravatar
+- 17)	in the bcrypt.compair
+  - a)	paylod = {...user}
+  - b)	delete payload.password
+  - c)	delete payload.email
 
-1)	Creating a model depends on the structures that is wanted
-2)	set up .env variables
-a)	add JWT_TOKEN='whatever it is'
-b)	CLIENT_URL=''
-c)	MONGODC_URI=''
-3)	those connect to the index.js
-4)	jsonwebtoken, bcrypt, passport and passport-jwt for backend
-a)	I should have had this done on the backend files already
-5)	Create a /config/passport.js file path
-6)	Sarah changed cosnt User from the mern auth to db to show we're referenceing the database
-7)	changed all uses of User in page
-8)	Make a user model - we have this i think Louis made a better one
-a)	Sarah adjusted the user.js from models to better work for her app
-i)	Why am I logging into this data base
-(1)	Are we favoriting them?
-(2)	are they for editing?
-b)	added a reference to the db
-i)	type array called watched bounties [{}]
-(1)	if we don’t remember how to link
-(2)	mongoose.Types.ObjectId (depends on the linked)
-9)	export a user model in the index .js
-10)	it will look similar to the other one except it is based on the db we are exporting
-11)	cors info???
-a)	nope lol
-12)	Add the middle ware under the home route
-a)	app.use and import all middleware that is going to be used
-b)	Sarah added a note to make some routing
-13)	added const passport = require('passport') ({the normal stuff})
-14)	making a v1 folder for the version type as more api esq 
-15)	app.use('/v1/auth', etc)
-16)	in users.js
-a)	we edited is 
-i)	removed gravatar
-ii)	added const db = require(filepath)
-iii)	adjusted email(message): to message: 'Email already exists' this is acting as the error for creating 
-b)	removed all essence of gravatar
-17)	in the bcrypt.compair
-a)	paylod = {...user}
-b)	delete payload.password
-c)	delete payload.email
-
-18)	made edits to the router.get for the password.auth jtw route
-19)	sarah made a new route file
-i)	called userSaves.js
-ii)	const express = require(‘express’) 
-iii)	const router = express.Router()
-b)	router.get(‘/savedBoutines’, (req,res) => {
-c)	console.log(`Here are the Bounties for ${req.user.name}`)
-d)	res.send(‘Love them bounties’)
-e)	module.exports=router
-20)	added the app.use to the server.js for the auth lock
-21)	nodemon testing ----
-22)	gives routes statuses for when they are running 
-23)	be sure to have mongo running 
-24)	use (whatever the db is)
-25)	show collections – to check collections
-26)	test using postman/insomnia
-27)	test the correct path to make sure they work
-28)	if you get back an unauth send you’re winning at life
-a)	if not you’re still winning just having a harder time ^_^
-29)	be sure to check the server command line to check if it is running properly
-30)	you can check auth by getting a bearer token from the back end
-31)	hit a roadblock with auth being an issue
-a)	db.User.findById(mis previous code jwt_payload._doc._id)
-32)	We searched a passport.js documentation to find a better way to get more auth info
-a)	Console.log was changed to check for .sub from the docs 
-i)	Came back undefined 
-33)	Did some minor adjustments in the auth.js to change the findByOne()
-34)	How to remove a specific field
-a)	Let userToReturn = {req.user._doc}
-b)	Delete userToReturn.password
-c)	
-d)	Res.json(req.userToReturn)
+- 18)	made edits to the router.get for the password.auth jtw route
+- 19)	sarah made a new route file
+    - i)	called userSaves.js
+    - ii)	const express = require(‘express’) 
+    - iii)	const router = express.Router()
+  - b)	router.get(‘/savedBoutines’, (req,res) => {
+  - c)	console.log(`Here are the Bounties for ${req.user.name}`)
+  - d)	res.send(‘Love them bounties’)
+  - e)	module.exports=router
+- 20)	added the app.use to the server.js for the auth lock
+- 21)	nodemon testing ----
+- 22)	gives routes statuses for when they are running 
+- 23)	be sure to have mongo running 
+- 24)	use (whatever the db is)
+- 25)	show collections – to check collections
+- 26)	test using postman/insomnia
+- 27)	test the correct path to make sure they work
+- 28)	if you get back an unauth send you’re winning at life
+  - a)	if not you’re still winning just having a harder time ^_^
+- 29)	be sure to check the server command line to check if it is running properly
+- 30)	you can check auth by getting a bearer token from the back end
+- 31)	hit a roadblock with auth being an issue
+  - a)	db.User.findById(mis previous code jwt_payload._doc._id)
+- 32)	We searched a passport.js documentation to find a better way to get more auth info
+  - a)	Console.log was changed to check for .sub from the docs 
+    - i)	Came back undefined 
+- 33)	Did some minor adjustments in the auth.js to change the findByOne()
+- 34)	How to remove a specific field
+  - a)	Let userToReturn = {req.user._doc}
+  - b)	Delete userToReturn.password
+  - c)	
+  - d)	Res.json(req.userToReturn)
