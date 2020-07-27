@@ -11,7 +11,7 @@ export default function Welcome() {
             <hr class="my-4" />
             <p>Never suffer from FOMO again!</p>
             <p class="lead">
-                <a class="btn btn-dark btn-lg" href="#" role="button">Sign up!</a>
+                <a class="btn btn-dark btn-lg" href="/register" role="button">Sign up!</a>
             </p>
         </div>
         </div>

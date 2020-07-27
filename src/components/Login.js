@@ -6,6 +6,7 @@ export default function Login() {
         <div className="col-md-7 offset-md-3 text-light">
             <div className="card card-body bg-dark">
                 <h2 className="py-2">Login</h2>
+                <a class="btn btn-dark btn-lg" href="/register" role="button">Don't have an account? Make one!</a>
                 <form action="/ideas" method="post" /*onSubmit={handleSubmit}*/>
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>

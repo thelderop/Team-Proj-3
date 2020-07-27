@@ -34,6 +34,7 @@ const Signup = () => {
             <div className="col-md-7 offset-md-3 text-light">
                 <div className="card card-body bg-dark">
                     <h2 className="py-2">Register</h2>
+                    <a class="btn btn-dark btn-lg" href="/login" role="button">Already have an account? Sign in!</a>
                     <form action="/ideas" method="post" /*onSubmit={handleSubmit}*/>
                         <div className="form-group">
                             <label htmlFor="name">Name:</label>

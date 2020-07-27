@@ -10,7 +10,7 @@ const Navigation = (props) => {
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item" content='welcome'>
                         <NavLink className="nav-link" exact to="/">Welcome</NavLink>
                     </li>
                     <li class="nav-item">
