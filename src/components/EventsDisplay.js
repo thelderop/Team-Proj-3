@@ -1,11 +1,9 @@
 import React from "react"
-
-
 const EventsDisplay = (props) => {
     // iterates over array of object (Calendar.js)
     let eventsList = props.events.map((event, i) => {
-        
         return (
+
             //console.log('eventsList return: ' + i + event.id)
                 <div>
                     {event.title}

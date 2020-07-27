@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+
 import EventName from './EventComponents/EventName'
 import EventLocation from './EventComponents/EventLocation'
 import axios from 'axios';
+import EventsDisplay from './EventsDisplay'
 
 export default function EventsTemplate() {
 
@@ -21,7 +23,9 @@ export default function EventsTemplate() {
             setEvents(response.data.events.event)
             console.log(response.data.events.event)
         })
+
         .catch(err => console.log('ERROR IN frontend /components/EventsTemplate.js: '+JSON.stringify(err)))
+
     }, [])
 
     //array of objects, iterated on in EventsDisplay.js
@@ -41,9 +45,10 @@ export default function EventsTemplate() {
             <div className="col-lg-6 offset-lg-3">
                 <h1>Event Details:</h1>
                 <EventName events={events} />
+
                 {/* <p>{JSON.stringify(events)}</p> */}
             </div>
         </div>
     )
-}
 
+}
