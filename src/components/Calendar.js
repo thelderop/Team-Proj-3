@@ -16,6 +16,7 @@ export default function Calendar() {
 
     //calls API on page render
     useEffect(() => {
+        // axios(`http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`, {method: 'GET', headers: {'Access-Control-Allow-Origin':'http://localhost:3001', 'Content-Type': 'application/json'}})
         axios.get(`https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`)
         .then(response => {
             console.log(`${process.env.EVENTFUL_KEY}`)
