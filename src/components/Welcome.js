@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Welcome() {
     return (
-    <div class="row">
+    <div className="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
             <div class="jumbotron">
