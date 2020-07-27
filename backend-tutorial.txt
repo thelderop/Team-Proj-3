@@ -1,0 +1,78 @@
+Hi team - I'm writing this to let you guys know some basics of what the backend does, how it interacts with the database, how it responds to calls from the frontend, as well as some basic instructions to get it up and running...
+
+######### Getting things up and running ##########
+
+	1: In shell, start your database with 'mongod' ('sudo mongod' in my system)
+		-this will show some technical logs, ending with "waiting for connections on 
+		 port 27017" (port:whatever)
+		-This is the mongo server.
+
+	2: go to the project folder Team-Proj-3/backend, make sure all of your node module
+ 	  dependencies are up-to-date with npm i, and run nodemon.
+		-for reference, check your package.json against mine.
+		-console will output, ending with "listening on 3001, connected to MongoDB at
+		 localhost:27017"
+		-This is the backend app, a server. It will handle communication between the
+		 frontend and the mongo server.
+
+
+
+
+
+	3: open up PostMan, and try sending a POST request to localhost:3001/v1/auth/register
+	   included in the post request will be the following key/value pairs:
+		-name : myName
+		-email : myEmail@email.com
+		-password : password
+
+	4: if your post was successful, the postman console will show something similar to:
+		
+		{
+    "watchedBounties": [],
+    "_id": "5f1e9b87a8ac0c0c4de5ad20",
+    "name": "deerp",
+    "email": "herpf@derp.com",
+    "password": "$2a$10$AZa1TsRGnuxpf8mScZCscuJAp1g3Xng3N7z1kkBSeiqt0TaA.dOgm",
+    "avatar": "//www.gravatar.com/avatar/7d3955d79c85e53b441a2eff88543122?s=200&r=pg&d=mm",
+    "date": "2020-07-27T09:16:55.523Z",
+    "__v": 0
+}
+
+	5: in postman, make a GET request to localhost:3001/v1/auth, it should return a list of all similar database objects shown in the POST request above.
+
+	6: in your shell, start mongo shell(command is 'mongo'), it should show a '>' symbol.
+		-from there, enter 'show dbs' to confirm that the database is created
+		-enter 'use <databaseName>' to connect mongo shell to the database
+		-once connected, 'show collections' to verify collection 'users' has been created
+		-then, 'db.users.find()' to verify users is being populated correctly.
+
+
+
+How it works - when the frontend makes a post request, we are passing a parameter 'req' to the backend. 'req' in this case is a JSON object with key/value pairs that contains the
+information to be interpreted (as req.body) by the backend. for example:
+
+req.body ===
+	{
+    "watchedBounties": [],
+    "_id": "5f1e9b87a8ac0c0c4de5ad20",
+    "name": "deerp",
+    "email": "herpf@derp.com",
+    "password": "$2a$10$AZa1TsRGnuxpf8mScZCscuJAp1g3Xng3N7z1kkBSeiqt0TaA.dOgm",
+    "avatar": "//www.gravatar.com/avatar/7d3955d79c85e53b441a2eff88543122?s=200&r=pg&d=mm",
+    "date": "2020-07-27T09:16:55.523Z",
+    "__v": 0
+	}
+
+- req.body.name === "deerp"
+- req.body.email === "herpf@derp.com"
+- etc.
+
+
+<form> html elements send this JSON object as a baked-in feature. use postman to visualize
+what's being sent to the backend, and how that data is interacting with the mongo server.
+
+
+	I'll keep an eye on the slack for any questions regarding implementation and debugging. Please don't hesitate to ask. Keep in mind that this is new territory for me, so there may be some hiccups, but I'd like these things to work as smoothly as possible (you guys are my user base, after all!)
+	
+	-Louis
+

@@ -8,7 +8,7 @@ const passport = require('passport');
 
 
 // Load User Model
-const User = require('../../models/User');
+const User = require('../../models/user');
 
 // GET api/users/test (Public)
 router.get('/test', (req, res) => res.json({msg: 'Users Endpoint Ok'}));
