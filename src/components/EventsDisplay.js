@@ -14,6 +14,10 @@ const EventsDisplay = (props) => {
                     <br/>
                     {event.title}
                     <br/>
+                    {event.start_time}
+                    <br/>
+                    {event.venue_address}
+                    <br/>
                 </div> 
             )
         })   
