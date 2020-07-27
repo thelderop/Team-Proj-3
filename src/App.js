@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <Navigation />
+      <Navigation component={Navigation}/>
       <div className="react-router-logic">
         <Switch>
           <Route path='/calendar' component={Calendar} />
