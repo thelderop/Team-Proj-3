@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import './App.css';
 import Calendar from './components/Calendar'
+import EventsTemplate from './components/EventsTemplate'
 import Favorites from './components/Favorites'
 import Login from './components/Login'
 import Profile from './components/Profile'
@@ -33,6 +34,7 @@ function App() {
           <Route path='/favorites' component={Favorites} />
           <Route path='/profile' component={Profile} />
           <Route path='/register' component={Register} />
+          <Route path='/eventstemplate' component={EventsTemplate} />
           <Route path='/' component={Welcome} />
         </Switch>
       </div>

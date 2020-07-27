@@ -29,6 +29,9 @@ const Navigation = (props) => {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/register">Register</NavLink>
                     </li>
+                    <li class="nav-item">
+                        <NavLink className="nav-link" to="/eventstemplate">Events Template</NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>
