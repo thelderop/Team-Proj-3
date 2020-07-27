@@ -10,7 +10,7 @@ const EventsDisplay = (props) => {
         
         return (
             // console.log('eventsList return: ' + i + event.id)
-                <div>
+                <div key={i}>
                     <br/>
                     {event.title}
                     <br/>

@@ -22,6 +22,11 @@ const FavoritesSchema = new Schema({
         type: mongoose.Types.ObjectId,
         ref: 'User'
     }],
+    comments: [{
+        commentBy: mongoose.Types.ObjectId,
+        ref: 'User',
+        comment: String
+    }],
 })
 
 
