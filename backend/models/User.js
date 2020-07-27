@@ -15,13 +15,19 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  avatar: {
-    type: String,
+  zipCode: {
+      type:number,
+      required: true,
+  },
+  DOB: {
+      type: Date,
+      required: true,
   },
   date: {
     type: Date,
     default: Date.now
   },
 });
+
 
 module.exports = User = mongoose.model('users', UserSchema);
