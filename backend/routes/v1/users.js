@@ -34,8 +34,8 @@ router.post('/register', (req, res) => {
         const newUser = new User({
           name: req.body.name,
           email: req.body.email,
-          avatar,
           password: req.body.password,
+          zipcode: req.body.zipcode,
         });
 
         // Salt and Hash password with bcryptjs, then save new user
@@ -58,6 +58,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
+  console.log('post login')
 
   // Find User by email
   User.findOne({ email })

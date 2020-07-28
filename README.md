@@ -209,3 +209,7 @@ Nesso's meeting with Milcah -
   - b)	Delete userToReturn.password
   - c)	
   - d)	Res.json(req.userToReturn)
+
+Attempt a turianry in the loading pages to see if there is a more elegant way to display the loading
+
+look for required

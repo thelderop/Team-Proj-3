@@ -64,7 +64,7 @@ router.post('/addUser', (req, res) => {
                     email: req.body.email,
                     password: req.body.password,
                     DOB: req.body.DOB,
-                    zipCode: req.body.zipCode,
+                    zipcode: req.body.zipcode,
                     avatar
                 });
 
@@ -92,7 +92,7 @@ router.put('/updateUserByEmail/:email', (req, res) => {
         // console.log(req.body)
         //fix me
         // {reqBody}
-        { name: req.body.name, email: req.body.email, password: req.body.password, DOB: req.body.DOB, zipCode: req.body.zipCode }
+        { name: req.body.name, email: req.body.email, password: req.body.password, DOB: req.body.DOB, zipcode: req.body.zipcode }
     )
         .then(updatedUser => {
             res.send(updatedUser)

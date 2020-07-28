@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink} from 'react-router-dom'
-// import { NavLink, Link, Switch } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+
 
 const Navigation = (props) => {
     return (
@@ -17,22 +17,33 @@ const Navigation = (props) => {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/calendar">Calendar</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/favorites">Favorites</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/login">Login</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/profile">Profile</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/register">Register</NavLink>
-                    </li>
                     <li class="nav-item">
                         <NavLink className="nav-link" to="/eventstemplate">Events Template</NavLink>
                     </li>
                 </ul>
+                {
+                    props.isAuthenticaed ?
+                        <ul className='navbar-nav ml-auto'>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/favorites">Favorites</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <span onClick={props.handleLogout} className="nav-link logout-link" to="/login">Logout</span>
+                            </li>
+                            </ul>
+                            :
+                            <ul className="navbar-nav mr-auto">
+                            <li className="nav-item">
+                        <NavLink className="nav-link" to="/login">Login</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/register">Register</NavLink>
+                    </li>
+                        </ul>
+                }
             </div>
         </nav>
     )
