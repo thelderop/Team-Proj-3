@@ -65,6 +65,7 @@ router.post('/addUser', (req, res) => {
                     password: req.body.password,
                     DOB: req.body.DOB,
                     zipCode: req.body.zipCode,
+                    _id: req.body._id,
                     avatar
                 });
 
