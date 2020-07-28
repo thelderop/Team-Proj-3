@@ -61,7 +61,16 @@ router.post('/addUser', (req, res) => {
                 // Create new user
                 let reqBody = req.body
                 const newUser = new User({
+<<<<<<< HEAD
                     reqBody
+=======
+                    name: req.body.name,
+                    email: req.body.email,
+                    password: req.body.password,
+                    DOB: req.body.DOB,
+                    zipcode: req.body.zipcode,
+                    avatar
+>>>>>>> 7837cbbc2a59b802ee5d514bbc002dca95790278
                 });
                 // const newUser = new User({
                 //     name: req.body.name,
@@ -97,9 +106,13 @@ router.put('/updateUserByEmail/:email', (req, res) => {
         // console.log(req.body)
         //fix me
         // {reqBody}
+<<<<<<< HEAD
         {$set:req.body}
         //backups for the backup god
         // { name: req.body.name, email: req.body.email, password: req.body.password, DOB: req.body.DOB, zipCode: req.body.zipCode }
+=======
+        { name: req.body.name, email: req.body.email, password: req.body.password, DOB: req.body.DOB, zipcode: req.body.zipcode }
+>>>>>>> 7837cbbc2a59b802ee5d514bbc002dca95790278
     )
         .then(updatedUser => {
             res.send(updatedUser)

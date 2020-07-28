@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function Favorites() {
+export default function Favorites(props) {
+
     return (
-        <>
-        <h1>Favorites</h1>
-        </>
+        <div>
+            <h1>Favorite page</h1>
+        </div>
     )
 }

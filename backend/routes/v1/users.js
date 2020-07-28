@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs')
 const passport = require('passport')
 const gravatar = require('gravatar')
 
-const db = ('../../models')
+const db = require('../../models')
 
 
 //API ROUTES
@@ -46,6 +46,7 @@ router.post('/addUser', (req, res) => {
     db.User.find({email: req.body.email})
         .then(user => {
             // If email already exists, send 400 response
+            console.log(user)
             if (user) {
                 return res.status(400).json({ email: 'Email already exists' });
                 // If email does not already exist, create new user

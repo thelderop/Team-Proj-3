@@ -30,10 +30,10 @@ router.get('/view/:id', (req, res) => {
 // CREATE individual event
 router.post('/addEvent', (req,res) => {
     console.log(req.body)
-    db.Event.find({title: req.body.title})
+    db.Event.findOne({title: req.body.title})
     .then(favorite => {
         if (favorite) {
-            return res.send('error, favorite already exists')
+            return res.send('error, event already exists')
         } else {
             let reqBody = req.body
             const newEvent = new Favorite({
@@ -48,7 +48,7 @@ router.post('/addEvent', (req,res) => {
 
 
 //PUT UPDATE
-router.put('/eupdateEventByTitle/:title', (req,res) => {
+router.put('/updateEventByTitle/:title', (req,res) => {
     db.Favorite.findOneAndUpdate(
         {title: req.params.title},
         {$set:req.body}

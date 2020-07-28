@@ -18,7 +18,7 @@ const UserSchema = new Schema({
   avatar: {
     type: String,
   },
-  zipCode: {
+  zipcode: {
     type: Number,
     required: true,
   },
@@ -27,7 +27,6 @@ const UserSchema = new Schema({
     required: true,
   }
 },
-
   {
     timestamps: true
   }

@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+
 const db = require('../../models')
 
 ////////////// ROUTES
@@ -14,8 +15,8 @@ router.get('/', (req, res) => {
     // after backend waits for api(db) response, do the next thing (anonymous promise function) (favorites is the query returned from db)
       .then(favorites => {
             //accept response as favorites, send to frontend
-        res.send(favorites)
-    })
+            res.send(favorites)
+        })
     .catch(err => console.log(err))
 })
 
@@ -38,19 +39,19 @@ router.get('/view/:id', (req, res) => {
 
 // CREATE favorite within database
 //currently this checks for duplicates with title, we should change this to a unique identifier (eventId)
-router.post('/addFave', (req,res) => {
-    db.Favorite.find({title: req.body.title})
+router.post('/addFavorite', (req,res) => {
+    db.Favorite.findOne({title: req.body.title})
     .then(favorite => {
         //if favorite searched for is found, return error
         if (favorite) {
-            return console.log('error, favorite already exists in collection')
+            return res.send('error, favorite already exists in collection')
             //else insert() in db
         } else {
             //I'd like to figure out how to clean this up to be more readable.
             let reqBody = req.body
-            const newFavorite = new Favorite({
+            const newFavorite = new Favorite(
                 reqBody
-            })
+            )
             // const newFavorite = new Favorite({
             //     title: req.body.title,
             //     location: req.body.location,
@@ -69,7 +70,7 @@ router.post('/addFave', (req,res) => {
 
 // FIND AND UPDATE
 //selects a document and updates it, this is probably the most difficult CRUD operation so far
-router.put('/updateFaveByTitle/:title', (req, res) => {
+router.put('/updateFavoriteByTitle/:title', (req, res) => {
     //currently searches by req.params, this can be simpler with req.body
     db.Favorite.findOneAndUpdate(
         // find the document
@@ -79,14 +80,14 @@ router.put('/updateFaveByTitle/:title', (req, res) => {
     )
         //promise function to be run after db sends response
         .then(updatedFavorite => {
-        res.send(updatedFavorite)
-    })
-    .catch(err => console.error(err))
+            res.send(updatedFavorite)
+        })
+        .catch(err => console.error(err))
 })
 
 //DELETE A DOCUMENT
 //like find(_id), but destroys the located document :)
-router.delete('/deleteFaveByTitle/:title', (req, res) => {
+router.delete('/deleteFavoriteByTitle/:title', (req, res) => {
     db.Event.findOneAndDelete(
         //document to be deleted
         {title: req.params.title}
