@@ -40,7 +40,9 @@ function App() {
           <Route path='/' component={Welcome} />
         </Switch>
       </div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
