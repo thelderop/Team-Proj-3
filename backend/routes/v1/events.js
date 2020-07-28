@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
 
 //GET UPDATE
 //Stretch
-router.put('/id', (req, res) => {
+router.put('/:id', (req, res) => {
     db.Event.findByIdAndUpdate(
         { _id: req.params.id },
         req.body,
