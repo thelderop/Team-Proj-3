@@ -27,7 +27,6 @@ const EventsDisplay = (props) => {
 
     return (
         <div className="eventDisplay">
-            <h1>List of eventful events:</h1>
             {eventsList}
             {/* {eventsList} */}
         </div>
