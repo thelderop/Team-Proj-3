@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
 app.use('/v1/bounties', require('./routes/v1/bounties'))
-app.use('/v1/auth', require('./routes/v1/auth'))
+app.use('/v1/users', require('./routes/v1/users'))
 app.use('/v1/events', require('./routes/v1/events'))
 app.use('/v1/favorites', require('./routes/v1/favorites'))
 

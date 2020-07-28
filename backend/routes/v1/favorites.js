@@ -31,15 +31,15 @@ router.get('/view/:id', (req, res) => {
     db.Favorite.findById(req.params.id)
         .then((favorite) => {
             res.send(favorite)
-        }).catch(err => console.log('err in GET request favorite.js'))
+        })
+        .catch(err => console.log('err in GET request favorite.js'))
 })
 
 
 // CREATE favorite within database
+//currently this checks for duplicates with title, we should change this to a unique identifier (eventId)
 router.post('/addFave', (req,res) => {
-    //doing this prevents an error in findOne query argument
-    let eventTitle = req.body.title
-    db.Favorite.findOne({ title: eventTitle})
+    db.Favorite.find({title: req.body.title})
     .then(favorite => {
         //if favorite searched for is found, return error
         if (favorite) {
@@ -47,16 +47,20 @@ router.post('/addFave', (req,res) => {
             //else insert() in db
         } else {
             //I'd like to figure out how to clean this up to be more readable.
+            let reqBody = req.body
             const newFavorite = new Favorite({
-                title: req.body.title,
-                location: req.body.location,
-                date: req.body.date,
-                description: req.body.description,
-                // userId: req.body.userId
+                reqBody
             })
-            //creates object, I may try to pass req.body here
+            // const newFavorite = new Favorite({
+            //     title: req.body.title,
+            //     location: req.body.location,
+            //     date: req.body.date,
+            //     description: req.body.description,
+            //     // userId: req.body.userId
+            // })
+            //saves to database
             newFavorite.save()
-            //sets response to new json object - I'm not entirely sure how this works.
+            //retuns data to browser
             .then(fave => res.json(fave))
         }
     })
@@ -65,13 +69,13 @@ router.post('/addFave', (req,res) => {
 
 // FIND AND UPDATE
 //selects a document and updates it, this is probably the most difficult CRUD operation so far
-router.put('/updateFaveByName/:name', (req, res) => {
+router.put('/updateFaveByTitle/:title', (req, res) => {
     //currently searches by req.params, this can be simpler with req.body
     db.Favorite.findOneAndUpdate(
         // find the document
-        { title: req.params.name },
+        { title: req.params.title },
         //define new document content (currently overwrites all values)
-        { title: req.body.title, location: req.body.location, description: req.body.description, date: req.body.date}
+        {$set:req.body}
     )
         //promise function to be run after db sends response
         .then(updatedFavorite => {
@@ -82,13 +86,13 @@ router.put('/updateFaveByName/:name', (req, res) => {
 
 //DELETE A DOCUMENT
 //like find(_id), but destroys the located document :)
-router.delete('/deleteFaveById/:id', (req, res) => {
+router.delete('/deleteFaveByTitle/:title', (req, res) => {
     db.Event.findOneAndDelete(
         //document to be deleted
-        { _id: req.params.id }
+        {title: req.params.title}
         )
         .then(deleteFavorite => {
-        res.send({ Message: 'Event Deleted' })
+        res.send({Message: `Event Deleted: ${req.params.title}`})
     })
     .catch(err => {console.error(err)})
 })
