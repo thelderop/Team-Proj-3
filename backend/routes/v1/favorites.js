@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     //query database, db.Favorite is exported from models/index.js 
     db.Favorite.find()
     // after backend waits for api(db) response, do the next thing (anonymous promise function) (favorites is the query returned from db)
-      .then(favorites =>
+      .then(favorites => {
             //accept response as favorites, send to frontend
         res.send(favorites)
     })
