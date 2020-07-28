@@ -23,7 +23,7 @@ const Navigation = (props) => {
                 </ul>
                 {
                     props.isAuthenticated ?
-                        <ul className='navbar-nav mr-auto'>
+                        <ul className='navbar-nav ml-auto'>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/profile">Profile</NavLink>
                             </li>
@@ -35,7 +35,7 @@ const Navigation = (props) => {
                             </li>
                             </ul>
                             :
-                            <ul className="navbar-nav mr-auto">
+                            <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
                         <NavLink className="nav-link" to="/login">Login</NavLink>
                     </li>

@@ -62,10 +62,10 @@ function App() {
         <Switch>
           <Route path='/calendar' component={Calendar} />
           <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} user={currentUser} /> } />
-          <Route path='/favorites' component={Favorites} />
+          {/* <Route path='/favorites' component={Favorites} /> */}
           <PrivateRoute path='/favorites' component={Favorites} user={currentUser} />
           <PrivateRoute path='/profile' component={Profile} user={currentUser} />
-          <Route path='/profile' component={Profile} />
+          {/* <Route path='/profile' component={Profile} /> */}
           <Route path='/register' component={Register} />
           <Route path='/eventstemplate' component={EventsTemplate} />
           <Route path='/' component={Welcome} />
