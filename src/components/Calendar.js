@@ -40,14 +40,14 @@ export default function Calendar() {
 
     return (
         <div className="Calendar">
-            <div class="row">
+            <div class="row margin">
                 <div class="col-lg-4">
                     <h3 id="calendar-title">Upcoming Events</h3>
                     <div id="events-display-container">
                         <EventsDisplay events={events} />
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-8 error">
                     <FullCalendar
                     plugins={[ dayGridPlugin ]}
                     initialView="dayGridMonth"

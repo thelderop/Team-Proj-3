@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0,0,0,0; 
 }
 
 .App-logo {
@@ -88,4 +89,7 @@ margin-right: 10vh;
 #calendar-title {
   padding-bottom: 0%;
   margin-bottom: 0%;
+}
+.margin {
+  margin-right: 0;
 }

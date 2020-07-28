@@ -41,7 +41,7 @@ export default function EventsTemplate() {
     // }
 
     return (
-        <div className="row">
+        <div className="row margin">
             <div className="col-lg-6 offset-lg-3">
                 <h1>Event Details:</h1>
                 <EventName events={events} />

@@ -72,7 +72,8 @@ req.body ===
 what's being sent to the backend, and how that data is interacting with the mongo server.
 
 
-	I'll keep an eye on the slack for any questions regarding implementation and debugging. Please don't hesitate to ask. Keep in mind that this is new territory for me, so there may be some hiccups, but I'd like these things to work as smoothly as possible (you guys are my user base, after all!)
+	I'll keep an eye on the slack for any questions regarding implementation and debugging. Please don't hesitate to ask. Keep in mind that this is new territory for me, so there may be some hiccups, but I'd like 
+	these things to work as smoothly as possible (you guys are my user base, after all!)
 	
 	-Louis
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect, Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from './utils/setAuthToken'
-import './App.css';
 import Calendar from './components/Calendar'
 import EventsTemplate from './components/EventsTemplate'
 import Favorites from './components/Favorites'
@@ -13,6 +12,7 @@ import Navigation from './wrappers/Navigation'
 import Register from './components/Register'
 import Footer from './wrappers/Footer'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   // get suer via jwt token to confirm user auth
@@ -56,7 +56,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='error'>
       <Navigation component={Navigation} handleLogout={handleLogout} isAuthenticated={isAuthenticated} />
       <div className="react-router-logic">
         <Switch>
