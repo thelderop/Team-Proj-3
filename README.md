@@ -42,7 +42,7 @@
     Thomas - Front-end css/etc
         - [X]  D1 CSS
         - [X]  D2 CSS
-        - [ ]  D3
+        - [X]  D3 React component review, boostrap exploration
         - [ ]  D4
         - [ ]  D5
         - [ ]  D6
