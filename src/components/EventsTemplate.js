@@ -8,19 +8,31 @@ import EventsDisplay from './EventsDisplay'
 
 export default function EventsTemplate() {
 
+    const defaultEventsState = [{"title": "fetching from eventful, please wait..."}]
+
     // test array of objects to mimic API response
     const testEvents = [{
         "url": "http://sandiego.eventful.com/events/lgbt-book-club-/E0-001-134699507-9?utm_source=apis&utm_medium=apim&utm_campaign=apic",
         "id": "E0-001-134699507-9",
         "city_name": "San Diego"
     }]
-
+    //backup url in case things get hosed
+    let backupUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
+    
     //calls API on page render
     useEffect(() => {
-        axios.get(`https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`)
+        //set events state to default method while axios call processes
+        setEvents(defaultEventsState)
+        //call the website. I moved the url to a variable to make it easier to work with
+        let apiUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
+        axios.get(apiUrl)
+        //anonymous promise function to be processed when frontend recieves response from api
         .then(response => {
+            //test log for debugging .env
             console.log(`${process.env.EVENTFUL_KEY}`)
+            //sets events to parsed response
             setEvents(response.data.events.event)
+            //visualization of state for development
             console.log(response.data.events.event)
         })
 
