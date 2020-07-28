@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 //
 
 //favorites Schema
-const FavoritesSchema = new Schema({
+const FavoriteSchema = new Schema({
     title: {
         type: String,
     },
@@ -18,16 +18,16 @@ const FavoritesSchema = new Schema({
     description: {
         type: String,
     },
-    userId: [{
-        type: mongoose.Types.ObjectId,
-        ref: 'User'
-    }],
-    comments: [{
-        commentBy: mongoose.Types.ObjectId,
-        ref: 'User',
-        comment: String
-    }],
+    // userId: [{
+    //     type: mongoose.Types.ObjectId,
+    //     ref: 'User'
+    // }],
+    // comments: [{
+    //     commentBy: mongoose.Types.ObjectId,
+    //     ref: 'User',
+    //     comment: String
+    // }],
 })
 
 
-module.exports = Favorite = mongoose.model('favorites', FavoritesSchema);
+module.exports = Favorite = mongoose.model('favorites', FavoriteSchema);
