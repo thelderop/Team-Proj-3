@@ -63,8 +63,8 @@ router.post('/addFave', (req,res) => {
     .catch(err => console.log(err))
 })
 
-//GET UPDATE
-//Stretch
+// FIND AND UPDATE
+//selects a document and updates it, this is probably the most difficult CRUD operation so far
 router.put('/updateFaveByName/:name', (req, res) => {
     //currently searches by req.params, this can be simpler with req.body
     db.Favorite.findOneAndUpdate(
@@ -80,8 +80,8 @@ router.put('/updateFaveByName/:name', (req, res) => {
     .catch(err => console.error(err))
 })
 
-//GET DELETE
-//stretch
+//DELETE A DOCUMENT
+//like find(_id), but destroys the located document :)
 router.delete('/deleteFaveById/:id', (req, res) => {
     db.Event.findOneAndDelete(
         //document to be deleted
