@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 
 function Footer() {
     return (
-        <footer className="navbar-dark bg-dark" style={{ color: "grey"}}>
+        <footer id="footer-test" className="navbar-dark bg-dark" style={{ color: "grey"}}>
             <div style={{ color: "white"}}>
                 Site designed by: Thomas, Louis, Jimmy, Nesso ©2020 GA SEIR526 
             </div>

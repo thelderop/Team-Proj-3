@@ -73,3 +73,7 @@ margin-top: 1vh;
 margin-right: 10vh;
 
 }
+
+#footer-test {
+  z-index: 1;
+}
