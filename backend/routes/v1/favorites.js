@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
 
 
 // CREATE favorite within database
-router.post('/addFavorite', (req,res) => {
+router.post('/addFave', (req,res) => {
     let eventTitle = req.body.title
     db.Favorite.findOne({ title: eventTitle})
     .then(favorite => {
@@ -48,19 +48,20 @@ router.post('/addFavorite', (req,res) => {
 
 //GET UPDATE
 //Stretch
-router.put('/id', (req, res) => {
-    db.Event.findByIdAndUpdate(
-        { _id: req.params.id },
-        req.body,
-        { new: true }
-    ).then(updatedFavorite => {
+router.put('/updateFaveByName/:name', (req, res) => {
+    db.Favorite.findOneAndUpdate(
+        { title: req.params.name },
+        { title: req.body.title, location: req.body.location, description: req.body.description, date: req.body.date}
+    )
+        .then(updatedFavorite => {
         res.send(updatedFavorite)
-    }).catch(err => console.error(err))
+    })
+    .catch(err => console.error(err))
 })
 
 //GET DELETE
 //stretch
-router.delete('/:id', (req, res) => {
+router.delete('/deleteFaveById/:id', (req, res) => {
     db.Event.findOneAndDelete({ _id: req.params.id }).then(deleteFavorite => {
         console.log(deleteFavorite)
         res.send({ Message: 'Event Deleted' }).catch(err => { console.error(err) })

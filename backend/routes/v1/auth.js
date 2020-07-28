@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 })
 
 //find a user by email (unique according to Schema rules)
-router.get('/findByEmail/:email', (req, res) => {
+router.get('/findUserByEmail/:email', (req, res) => {
     db.User.find({ email: req.params.email })
         .then(user => {
             console.log(user)
@@ -43,7 +43,7 @@ router.get('/test', function (req, res) {
 
 //modified from AZocher's mern-auth codealong
 // GET api/users/register (Public)
-router.post('/register', (req, res) => {
+router.post('/addUser', (req, res) => {
     // Find User By Email
     db.User.findOne({ email: req.body.email })
         .then(user => {
@@ -84,11 +84,11 @@ router.post('/register', (req, res) => {
 
 //updates a user, email is unique, 
 //TODO 0 passing {$set: reqBody} would be preferred to {name:req.body.name, ...}
-router.put('/updateByEmail/:email', (req, res) => {
+router.put('/updateUserByEmail/:email', (req, res) => {
     // let reqBody = JSON.stringify(req.body)
     // console.log(reqBody)
     db.User.findOneAndUpdate(
-        { email: req.params.email },
+        { email: req.body.email },
         // console.log(req.body)
         //fix me
         // {reqBody}
@@ -102,7 +102,7 @@ router.put('/updateByEmail/:email', (req, res) => {
 
 
 //deletes user, no body argument is sent.
-router.delete('/deleteByEmail/:email', (req, res) => {
+router.delete('/deleteUserByEmail/:email', (req, res) => {
     db.User.findOneAndDelete({ email: req.params.email })
         .then(deletedItem => {
             console.log(deletedItem)
