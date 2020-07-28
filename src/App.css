@@ -82,7 +82,11 @@ margin-right: 10vh;
 #events-display-container {
   margin-top: 0%;
   padding-top: 7%;
+<<<<<<< HEAD
   height: 650px;
+=======
+  height: 100vh;
+>>>>>>> e1567bc476053aec657e689c28d0d57976dfd156
   overflow-y: scroll;
 }
 

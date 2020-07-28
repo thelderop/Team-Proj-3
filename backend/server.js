@@ -26,7 +26,7 @@ app.use('/v1/events', require('./routes/v1/events'))
 app.use('/v1/favorites', require('./routes/v1/favorites'))
 
 //setup out routes
-// app.use('/v1/users', users)
+app.use('/v1/users', users)
 
 //Call passport
 require('./config/passport')(passport)

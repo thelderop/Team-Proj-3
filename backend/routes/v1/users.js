@@ -59,9 +59,9 @@ router.post('/addUser', (req, res) => {
 
                 // Create new user
                 let reqBody = req.body
-                const newUser = new User({
+                const newUser = new User(
                     reqBody
-                });
+                );
                 // const newUser = new User({
                 //     name: req.body.name,
                 //     email: req.body.email,
