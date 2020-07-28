@@ -46,7 +46,7 @@ function App() {
   }
 
   //Logging out
-  let handlelogout = () => {
+  let handleLogout = () => {
     if (localStorage.getItem('jwtToken') !== null) {
       localStorage.removeItem('jwtToken')
       setCurrentUser(null)
@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div>
-      <Navigation component={Navigation} handlelogout={handlelogout} isAuthenticated={isAuthenticated} />
+      <Navigation component={Navigation} handleLogout={handleLogout} isAuthenticated={isAuthenticated} />
       <div className="react-router-logic">
         <Switch>
           <Route path='/calendar' component={Calendar} />
