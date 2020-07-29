@@ -19,13 +19,13 @@ const UserSchema = new Schema({
     type: String,
   },
   zipcode: {
-    type: Number,
+    type: String,
     required: true,
   },
-  DOB: {
-    type: Number,
-    required: true,
-  }
+  // DOB: {
+  //   type: Number,
+  //   required: true,
+  // }
 },
   {
     timestamps: true
