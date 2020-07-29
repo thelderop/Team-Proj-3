@@ -20,12 +20,12 @@ const UserSchema = new Schema({
   },
   zipcode: {
     type: Number,
-    required: true,
+    // required: true,
   },
-//   DOB: {
-//     type: Number,
-//     required: true,
-//   }
+  // DOB: {
+  //   type: Number,
+  //   required: true,
+  // }
 },
   {
     timestamps: true

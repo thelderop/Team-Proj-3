@@ -8,6 +8,7 @@ const Profile = (props) => {
           <hr class="my-4" />
           <p class="lead"><strong>Email:</strong> {props.user.email}</p>
           <p class="lead"><strong>ZIP Code:</strong> {props.user.zipcode}</p>
+          <p class="lead"><strong>Registered:</strong> {props.user.createdAt}</p>
         </div>
       : <h4>Loading...</h4>
 
