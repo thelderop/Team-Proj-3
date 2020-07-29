@@ -19,7 +19,7 @@ const UserSchema = new Schema({
     type: String,
   },
   zipcode: {
-    type: String,
+    type: Number,
     required: true,
   },
   // DOB: {
