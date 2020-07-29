@@ -10,9 +10,10 @@ we can call the backend and have it reach the database... THIS IS GREAT GUYS GOO
 
 MVP TODOS (Sorry I'm dead-ass tired so if these aren't MVP goals please feel free to ignore them.) I'm available for debugging:
 	-I haven't tested login, but we should get this functioning.
+	-Getting data from the API to show up in the database.
 	-A profile page that rejects users who aren't logged in
 	-a search form that directs user to calender with a call to eventful with the query values appended at the end instead of our default call (forms return queries based on input values, with query keys equalling the 'name' of the input, review the 'fetch-reddit-slideshow' assignment from unit 2) - the search form should be on a page that rejects someone who isn't logged in.
-	-populating the calendar with data based on the API return. event.start_time will give you a good starting point, though I've been told that dates are kind of a pain to work with in JS. I'll look into the calendar object values first thing in the morning (this is similar on the "what would you do next?" from my p2)
+	-populating the calendar with data based on the API return. event.start_time will give you a good starting point, though I've been told that dates are kind of a pain to work with in JS. I'll look into the calendar object values first thing in the morning (this is similar on the "what would you do next?" from my p2). my idea for how to display the number of events on a given date is to compare the date value (from event_start) against the calendar date value (currently unknown), map those into an array, and display a component with dayArray.length (whatever.length) as the value.
 
 Stretch goals that I have in mind:
 	-zip code filtering for search results (this shouldn't be too hard, really we'll just have to figure out how to access the user object and set a hidden input with user.zipcode), to be done when modified searches are done, This should be allowed to be toggled (in case a user wants to search for events at another location)
