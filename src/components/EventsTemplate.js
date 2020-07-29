@@ -36,7 +36,7 @@ export default function EventsTemplate() {
             console.log(response.data.events.event)
         })
 
-        .catch(err => console.log('ERROR IN frontend /components/EventsTemplate.js: '+JSON.stringify(err)))
+        .catch(err => console.log('ERROR IN frontend /components/Calendar.js: '+JSON.stringify(err)))
 
     }, [])
 

@@ -15,48 +15,11 @@ const db = require('../../models')
 // get log people in and check their creds against existing user data
 //GET if already logged in, set user data to current
 
-<<<<<<< HEAD
 //shows all documents in collection 'users'
 router.get('/', (req, res) => {
     db.User.find()
         .then(users => {
             res.send(users)
-=======
-// GET api/users/register (Public)
-router.post('/register', (req, res) => {
-  // Find User By Email
-  User.findOne({ email: req.body.email })
-    .then(user => {
-      // If email already exists, send 400 response
-      if(user) {
-        return res.status(400).json({email: 'Email already exists'});
-        // If email does not already exist, create new user
-      } else {
-        // Get avatar from Gravatar
-        const avatar = gravatar.url(req.body.email, {
-          s: '200', // avatar size option
-          r: 'pg', // avatar rating option
-          d: 'mm', // default avatar option
-        });
-
-        // Create new user
-        const newUser = new User({
-          name: req.body.name,
-          email: req.body.email,
-          password: req.body.password,
-          zipcode: req.body.zipcode,
-        });
-
-        // Salt and Hash password with bcryptjs, then save new user
-        bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(newUser.password, salt, (err, hash) => {
-            if(err) throw err;
-            newUser.password = hash;
-            newUser.save()
-              .then(user => res.json(user))
-              .catch(err => console.log(err));
-          })
->>>>>>> e1567bc476053aec657e689c28d0d57976dfd156
         })
         .catch(err => console.log(err))
 })
@@ -70,17 +33,10 @@ router.get('/view/:id', (req, res) => {
         .catch(err => console.log(err))
 })
 
-<<<<<<< HEAD
-=======
-router.post('/login', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
-  console.log('post login')
->>>>>>> e1567bc476053aec657e689c28d0d57976dfd156
 
 //a fun test function to test connectivity with postman
 router.get('/test', function (req, res) {
-    console.log(`successfully connected to backend!!!!!!!! auth.js`)
+    res.send(process.env.EVENTFUL_KEY)
 })
 
 //modified from AZocher's mern-auth codealong

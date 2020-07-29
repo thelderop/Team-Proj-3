@@ -27,7 +27,6 @@ router.get('/view/:id', (req, res) => {
         .catch(err => console.log('error in events.js'))
 })
 
-<<<<<<< HEAD
 // CREATE individual event
 router.post('/addEvent', (req,res) => {
     console.log(req.body)
@@ -45,18 +44,6 @@ router.post('/addEvent', (req,res) => {
         }
     })
     .catch (err => console.log(err))
-=======
-//GET UPDATE
-//Stretch
-router.put('/:id', (req, res) => {
-    db.Event.findByIdAndUpdate(
-        { _id: req.params.id },
-        req.body,
-        { new: true }
-    ).then(updatedEvent => {
-        res.send(updatedEvent)
-    }).catch(err => console.error(err))
->>>>>>> e1567bc476053aec657e689c28d0d57976dfd156
 })
 
 
