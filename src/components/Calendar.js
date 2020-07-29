@@ -28,7 +28,7 @@ export default function Calendar() {
         //promise function, 'response' is what we're sent with axios.get(apiUrl), after it's arrived to our frontend server, JS will continue processing.
         .then(response => {
             //test to debug .env)
-            console.log(`${process.env.EVENTFUL_KEY}`)
+            // console.log(`${process.env.EVENTFUL_KEY}`)
             //change events state to formatted response
             setEvents(response.data.events.event)
             //data visualization in browser console for debugging
