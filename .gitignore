@@ -25,3 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 
+
+# Louis' stupid system is hosed
+
+/src/components/Calendar.js

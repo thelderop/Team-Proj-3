@@ -39,6 +39,7 @@ const Signup = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault()
+        console.log(process.env.REACT_APP_API)
         //check if both passwords are the same
         //    this code wasnt done so i left it out
         const newUser = {
@@ -50,7 +51,7 @@ const Signup = () => {
             zipcode: zipcode,
             password: password
         }
-        axios.post(`${process.env.REACT_APP_API}/v1/users/register`, newUser)
+        axios.post(`http://localhost:3001/v1/users/register`, newUser)
             //THIS LINE NEEDS TO BE REDONE ONCE LOUIS FINISHES BACKEND
             .then(res => {
                 setRedirect(true)

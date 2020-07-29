@@ -27,7 +27,7 @@ export default function Login(props) {
             password: password,
         }
         // make a post request to our API to see check user Authentication
-        axios.post(`${process.env.REACT_APP_API}/v1/users/login`, userData)
+        axios.get(`localhost:3001/v1/users/`, userData)
             .then(res => {
                 // take res data and set to token
                 const { token } = res.data

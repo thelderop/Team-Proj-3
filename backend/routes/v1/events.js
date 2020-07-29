@@ -31,14 +31,14 @@ router.get('/view/:id', (req, res) => {
 router.post('/addEvent', (req,res) => {
     console.log(req.body)
     db.Event.findOne({title: req.body.title})
-    .then(favorite => {
-        if (favorite) {
+    .then(event => {
+        if (event) {
             return res.send('error, event already exists')
         } else {
             let reqBody = req.body
-            const newEvent = new Favorite({
+            const newEvent = new Event(
                 reqBody
-            })
+            )
             newEvent.save()
             .then(event => res.json(event))
         }
