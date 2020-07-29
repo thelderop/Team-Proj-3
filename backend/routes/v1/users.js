@@ -54,6 +54,7 @@ router.post('/register', (req, res) => {
                     r: 'pg',
                     d: 'mm'
                 })
+
                 const newUser = new User(
                     req.body
                 )
