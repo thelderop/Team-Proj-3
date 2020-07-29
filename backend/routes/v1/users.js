@@ -5,14 +5,20 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
+​
 
-
+//API ROUTES
+//GET api user already registered
+//if not registered, register user
+// get log people in and check their creds against existing user data
+//GET if already logged in, set user data to current
+//shows all documents in collection 'users'
 // Load User Model
 const User = require('../../models/user');
-
+​
 // GET api/users/test (Public)
 router.get('/test', (req, res) => res.json({msg: 'Users Endpoint Ok'}));
-
+​
 // GET api/users/register (Public)
 router.post('/register', (req, res) => {
   // Find User By Email
@@ -29,7 +35,7 @@ router.post('/register', (req, res) => {
           r: 'pg', // avatar rating option
           d: 'mm', // default avatar option
         });
-
+​
         // Create new user
         const newUser = new User({
           name: req.body.name,
@@ -37,7 +43,7 @@ router.post('/register', (req, res) => {
           password: req.body.password,
           zipcode: req.body.zipcode,
         });
-
+​
         // Salt and Hash password with bcryptjs, then save new user
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -48,18 +54,18 @@ router.post('/register', (req, res) => {
               .catch(err => console.log(err));
           })
         })
-
+​
       }
     })
 });
-
+​
 // GET api/users/login (Public)
-
+​
 router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   console.log('post login')
-
+​
   // Find User by email
   User.findOne({ email })
     .then(user => {
@@ -67,16 +73,16 @@ router.post('/login', (req, res) => {
       if(!user) {
         return res.status(404).json({ email: 'User not found' })
       }
-
+​
       // Check password
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if(isMatch) {
             // User matched, send JSON Web Token
-
+​
             // Create token payload (you can include anything you want)
             const payload = { id: user.id, name: user.name, email: user.email, zipcode: user.zipcode }
-
+​
             // Sign token
             jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 3600 }, (err, token) => {
               res.json({ success: true, token: 'Bearer ' + token })
@@ -87,7 +93,7 @@ router.post('/login', (req, res) => {
         })
     })
 });
-
+​
 // GET api/users/current (Private)
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
   // res.json({ msg: 'Success' })
@@ -99,5 +105,4 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     avatar: req.user.avatar,
   })
 });
-
-module.exports = router;
+​

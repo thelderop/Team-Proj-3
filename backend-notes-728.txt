@@ -1,0 +1,54 @@
+technical analysis for july 28, sei526, louis
+
+To preface: This is some observations that I've made to get our disjointed app up and running successfully. (the sooner, the better)
+
+##########OVERVIEW
+Right now we have a web-host api (eventful), Calendar.js is making an axios call to that to populate a list of upcoming events. Our frontend is meant to connect to our backend, which is a localhost server that can make CRUD calls to a mongo database.
+
+###############BACKEND
+backend is successfully connected to local mongo database, with all Create Read Use Destroy functions in place for some routes. We are waiting for calls from the frontend. Current address is localhost:3001, with routes explanations explained better in /backends/routes/v1/favorites.js - slack Louis for more information on how to properly ping this server.
+
+The backend can be interacted with using PostMan - again Slack Louis about this for details on routing. also check out the backend-tutorial text file in the project parent folder for a brief overview and some details of setup and how it works. If your mongod and backend is up and running, you should be able to CRUD with that database using postman and calling localhost:3001, as of monday night, favorites and auth is successfully accepting calls.
+
+################FRONTEND
+Calls to the eventful API are handled in the frontend (currently in src/Calendar.js) ; I've modified the call to be made by a variable that will help us to customize calls to the eventful API. 
+
+As we work on getting our calendar populated, we should also keep in mind defining some data points to help us properly define the calendar, so that we can insert the wanted data as needed. using a third-party module like this carries some risks - if we can't access the data it's producing, we can't populate the calendar properly with the data we call from eventful. 
+
+
+################CURRENT STATE OF THE PROJECT
+Currently: (late monday night) we are using a third-party module to render Calendar.js that will require some study to manipulate properly - it is unknown as to if this is going to take more or less time to deal with than defining our own... Coming up with data points as the calendar generates will give us an idea of what we're working with, and will allow us to create a function to populate the calendar with relevant data. (this was mentioned in #frontend)
+
+
+###############CURRENT TECHNICAL NOTES
+dotenv is not working in frontend. there's currently a placeholder of my API key which I've had to designate as lost.
+there have been no call requests from frontend to backend, this is a core part of a disjointed server project, please keep it in mind while developing frontend. (host is localhost:3001) , make a get request to localhost:3001/v1/auth/test to confirm connection (while backend server is running), (which may fail if mongodb server is not online ("listening on 27017"))
+ - so to get backend online it is 2 shell tabs - 'mongod' and cd /project/backend nodemon
+
+
+current tasks: 
+
+Louis(me): Myself is ironing out routes and models to make sure everything is running smoothly on the backend, then jumping in for tech support on the frontend and connecting to eventful webAPI. My big task for the morning is figuring out how to relate mongo databases to one another (My scheme seems sane, so this shouldn't be too much of a problem.)
+
+
+
+<please add to this, everyone on our team>
+
+
+
+to restate in starting backend (for testing):
+open a shell tab, start mongod(or 'sudo mongod'), this starts your database server
+open another shell tab, navigate to Team-Proj-3/backend, 'npm i' to install dependencies, 'nodemon' to start up the backend server
+open postman and make a get request to localhost:3001/v1/auth/test - you should get a log in your console /backend (where you ran nodemon) that says "successfully connected to backend!!!!!!!! auth.js"
+you can now make calls in postman to localhost:3001/auth/test(example) to confirm you're connected.
+play around with the CRUD routes and GET,POST,PUT,DELETE commands in the auth.js route file
+study backend/routes/v1/favorites.js to learn how calls to the backend are handled.
+'mongo' in shell to study your local database to make sure things are working properly:
+(for example:)
+	show dbs
+	use eventTracker
+	show collections
+	db.<collection>.find()
+	db.users.find()
+	db.favorites.find()
+that will help you find any created files with the routes we currently have set up, but postman should give ample feedback. Slack Louis with questions or details. (if a postman GET localhost:3001/v1/favorites/ shows an empty array [] , you're on the right track)

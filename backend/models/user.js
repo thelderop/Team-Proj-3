@@ -15,17 +15,17 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  // avatar: {
-  //   type: String,
-  // },
+  avatar: {
+    type: String,
+  },
   zipcode: {
     type: Number,
     required: true,
   },
-  // DOB: {
-  //   type: Number,
-  //   required: true,
-  // }
+  DOB: {
+    type: Number,
+    required: true,
+  }
 },
   {
     timestamps: true
