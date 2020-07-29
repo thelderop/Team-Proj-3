@@ -24,7 +24,7 @@ export default function EventsTemplate() {
         //set events state to default method while axios call processes
         setEvents(defaultEventsState)
         //call the website. I moved the url to a variable to make it easier to work with
-        let apiUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
+        let apiUrl = `http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
         axios.get(apiUrl)
         //anonymous promise function to be processed when frontend recieves response from api
         .then(response => {

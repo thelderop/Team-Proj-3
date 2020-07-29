@@ -22,10 +22,10 @@ const UserSchema = new Schema({
     type: Number,
     required: true,
   },
-  DOB: {
-    type: Number,
-    required: true,
-  }
+//   DOB: {
+//     type: Number,
+//     required: true,
+//   }
 },
   {
     timestamps: true
