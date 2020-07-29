@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Profile = (props) => {
     let userData = props.user
-      ? <div>
-          <h1>Profile</h1>
-            <p><strong>Name:</strong> {props.user.name}</p>
-            <p><strong>email:</strong> {props.user.email}</p>
-            {/* <p><strong>ID:</strong> {props.user.id}</p> */}
+      ? <div class="jumbotron my-3">
+          <h2 class="display-3">Hello, {props.user.name}!</h2>
+          <hr class="my-4" />
+          <p class="lead"><strong>Email:</strong> {props.user.email}</p>
+          <p class="lead"><strong>ZIP Code:</strong> {props.user.zipcode}</p>
         </div>
       : <h4>Loading...</h4>
 
@@ -18,10 +18,15 @@ const Profile = (props) => {
         }
 
       return (
-        <div>
-          {props.user ? userData : errorDiv() }
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 offset-md-2">
+              {props.user ? userData : errorDiv() }
+            </div>
+          </div>
         </div>
       )
 }
 
 export default Profile;
+
