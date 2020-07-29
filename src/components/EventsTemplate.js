@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-
 import EventName from './EventComponents/EventName'
 import EventLocation from './EventComponents/EventLocation'
 import axios from 'axios';
-import EventsDisplay from './EventsDisplay'
 
 export default function EventsTemplate() {
 

@@ -6,7 +6,7 @@ const EventName = (props) => {
     let eventsNameDetail = props.events.map((event, i) => {
         console.log('eventsList return: ' + i + event.id)
         return (
-                <div class="card border-success mb-3" styles="max-width: 20rem;">
+                <div class="card border mb-3" styles="max-width: 20rem;">
                     <div class="card-header">{event.start_time}</div>
                     <div class="card-body">
                         <h4 class="card-title">{event.title}</h4>
