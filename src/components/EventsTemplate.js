@@ -8,7 +8,7 @@ import EventsDisplay from './EventsDisplay'
 
 export default function EventsTemplate() {
 
-    const defaultEventsState = [{"title": "fetching from eventful, please wait..."}]
+    const defaultEventsState = [{"title": "Fetching Events, please wait..."}]
 
     // test array of objects to mimic API response
     const testEvents = [{

@@ -20,7 +20,7 @@ export default function Calendar() {
     //calls API on page render
     useEffect(() => {
         //set events state to wait message while axios call gets data
-        setEvents([{"title": "fetching from eventful, please wait...`"}])
+        setEvents([{"title": "Fetching Events, please wait..."}])
         //variable to be set on page render, write to this variable to adjust search parameters (querys and responses, see eventful documentation)
         let apiUrl = `http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
         //ideally, we will set apiUrl to a useState(), to allow updating displayed data without reloading page

@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 import setAuthToken from '../utils/setAuthToken'
 
 export default function Login(props) {
-    console.log("Login COmponent Rendered")
+    console.log("Login Component Rendered")
     console.log(props, 'HI')
 
     let [email, setEmail] = useState("")
@@ -27,22 +27,24 @@ export default function Login(props) {
             password: password,
         }
         // make a post request to our API to see check user Authentication
-        axios.get(`localhost:3001/v1/users/`, userData)
+        axios.post(`${process.env.REACT_APP_API}/v1/users/login/`, userData)
             .then(res => {
+                console.log(res.data, '1 (^///^)')
                 // take res data and set to token
                 const { token } = res.data
                 // save token to localStorage
+                console.log(token, '2 (^///^)')
                 localStorage.setItem('jwtToken', token)
                 // set token for Auth Header
                 setAuthToken(token)
                 // decode jwt token
                 const decoded = jwt_decode(token)
                 // set current user 
-                console.log(decoded, 'Hi im decoded')
-                console.log('props.nowCurrentUser', props.nowCurrentUser)
+                // console.log(decoded, 'Hi im decoded')
+                // console.log('props.nowCurrentUser', props.nowCurrentUser)
                 props.nowCurrentUser(decoded)
             })
-            .catch(err => console.error(err), console.log('im  an error'))
+            .catch(err => console.error(err))
     }
 
     if (props.user) return <Redirect to="/profile" user={props.user} />
