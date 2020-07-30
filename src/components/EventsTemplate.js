@@ -17,21 +17,33 @@ export default function EventsTemplate() {
     //backup url in case things get hosed
     let backupUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
     
+    // declare a variable with an empty array
+    let singleEvent = []
+
     //calls API on page render
     useEffect(() => {
         //set events state to default method while axios call processes
         setEvents(defaultEventsState)
         //call the website. I moved the url to a variable to make it easier to work with
         let apiUrl = `http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
-        axios.get(apiUrl)
+        axios.get(backupUrl)
         //anonymous promise function to be processed when frontend recieves response from api
         .then(response => {
+            singleEvent = []
+            let eventfulData = response.data.events.event
+            eventfulData.forEach(function(eventInfo) {
+                var i = 0
+                if (i == singleEvent.length) {
+                    singleEvent.push(`${eventInfo.title}`)
+                } 
+            })
             //test log for debugging .env
-            console.log(`${process.env.EVENTFUL_KEY}`)
+            //console.log(`${process.env.EVENTFUL_KEY}`)
             //sets events to parsed response
             setEvents(response.data.events.event)
             //visualization of state for development
-            console.log(response.data.events.event)
+            //console.log(`🌊🌊 ${response.data.events.event}  🌊🌊`)
+            console.log(singleEvent)
         })
 
         .catch(err => console.log('ERROR IN frontend /components/Calendar.js: '+JSON.stringify(err)))

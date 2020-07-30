@@ -15,7 +15,7 @@ export default function Calendar() {
         "city_name": "San Diego"
     }]
     // backup axios call in case things get hosed
-    const backupCall = axios.get(`https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`)
+    let backupCall = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
 
     //calls API on page render
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function Calendar() {
         //variable to be set on page render, write to this variable to adjust search parameters (querys and responses, see eventful documentation)
         let apiUrl = `http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
         //ideally, we will set apiUrl to a useState(), to allow updating displayed data without reloading page
-        axios.get(apiUrl)
+        axios.get(backupCall)
         //promise function, 'response' is what we're sent with axios.get(apiUrl), after it's arrived to our frontend server, JS will continue processing.
         .then(response => {
             //test to debug .env)
@@ -48,7 +48,7 @@ export default function Calendar() {
     //         </div>
     //     })
     // }
-
+    
     return (
         <div className="Calendar">
             <div class="row my-5">
@@ -62,6 +62,7 @@ export default function Calendar() {
                     <FullCalendar
                     plugins={[ dayGridPlugin ]}
                     initialView="dayGridMonth"
+                    
                     />
                 </div>
             </div>
