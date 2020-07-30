@@ -31,6 +31,16 @@ app.use('/v1/users', users)
 //Call passport
 require('./config/passport')(passport)
 
+const uri = process.env.MONGOD_URI
+
+
+const MongoClient = require('mongodb').MongoClient;
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 
 
@@ -47,7 +57,7 @@ require('./config/passport')(passport)
 // xhr.send(null);
 
 // routes
-mongoose.connect(mdb)
+mongoose.connect(uri)
     .then(() => { console.log('MongoDB Connected... (^///^)') })
     .catch(err => console.log(err))
 
