@@ -31,35 +31,22 @@ app.use('/v1/users', users)
 //Call passport
 require('./config/passport')(passport)
 
-const uri = process.env.MONGOD_URI
+// const uri = process.env.MONGOD_URI
 
 
-const MongoClient = require('mongodb').MongoClient;
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 
-
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//   });
-
-// app.options('/bounties/:id', cors())
-// var xhr = new XMLHttpRequest();
-// xhr.open('GET', 'http://abc.com/', true);
-// xhr.withCredentials = true;
-// xhr.send(null);
-
-// routes
-mongoose.connect(uri)
-    .then(() => { console.log('MongoDB Connected... (^///^)') })
-    .catch(err => console.log(err))
+// // routes
+// mongoose.connect(uri)
+//     .then(() => { console.log('MongoDB Connected... (^///^)') })
+//     .catch(err => console.log(err))
 
 // test routing
 app.get('/', (req, res) => {
