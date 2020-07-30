@@ -4,7 +4,7 @@ import EventName from './EventComponents/EventName'
 import EventLocation from './EventComponents/EventLocation'
 import axios from 'axios';
 
-export default function EventsTemplate() {
+export default function EventsTemplate(props) {
 
     const defaultEventsState = [{"title": "Fetching Events, please wait..."}]
 
@@ -15,13 +15,14 @@ export default function EventsTemplate() {
         "city_name": "San Diego"
     }]
     //backup url in case things get hosed
-    let backupUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
+    let backupUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/get?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
     
     // declare a variable with an empty array
     let singleEvent = []
 
     //calls API on page render
     useEffect(() => {
+        console.log(props)
         //set events state to default method while axios call processes
         setEvents(defaultEventsState)
         //call the website. I moved the url to a variable to make it easier to work with
