@@ -15,7 +15,7 @@ export default function EventsTemplate(props) {
         "city_name": "San Diego"
     }]
     //backup url in case things get hosed
-    let backupUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/get?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`
+    let backupUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/get?app_key=NFRS6FwLVhcNKTWD&id=${props.user.favorite}`
     
     // declare a variable with an empty array
     let singleEvent = []
