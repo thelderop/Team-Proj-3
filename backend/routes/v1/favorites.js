@@ -40,16 +40,26 @@ router.get('/view/:id', (req, res) => {
 // CREATE favorite within database
 //currently this checks for duplicates with title, we should change this to a unique identifier (eventId)
 router.post('/addFavorite', (req, res) => {
-    db.Favorite.findOne({ title: req.body.title })
-        .then(favorite => {
+    db.User.findOne({
+        // find only for the current user favorite collection here
+        email: req.body.email
+        // looking at event and finding the field named title to match to our req title
+        // event: 
+        // { $elemMatch: 
+        //     {title: req.body.title} 
+        // } 
+    })
+        .then(user => {
+            console.log(user)
             //if favorite searched for is found, return error
-            if (favorite) {
+            if (user.favorite.includes(req.body.title)) {
+                console.log(`in the if fav section`)
                 return res.send('error, favorite already exists in collection')
                 //else insert() in db
             } else {
                 //I'd like to figure out how to clean this up to be more readable.
-                let reqBody = req.body
-                const newFavorite = new Favorite(
+                let reqBody = { title: req.body.title }
+                const newEvent = new Event(
                     reqBody
                 )
                 // const newFavorite = new Favorite({
@@ -60,9 +70,9 @@ router.post('/addFavorite', (req, res) => {
                 //     // userId: req.body.userId
                 // })
                 //saves to database
-                newFavorite.save()
+                user.favorite.push(newEvent)
                     //retuns data to browser
-                    .then(fave => res.json(fave))
+                return res.send(user)
             }
         })
         .catch(err => console.log(err))
