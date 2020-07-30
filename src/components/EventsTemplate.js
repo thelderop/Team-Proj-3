@@ -38,12 +38,9 @@ export default function EventsTemplate(props) {
                     singleEvent.push(`${eventInfo.title}`)
                 } 
             })
-            //test log for debugging .env
-            //console.log(`${process.env.EVENTFUL_KEY}`)
-            //sets events to parsed response
+
             setEvents(response.data.events.event)
-            //visualization of state for development
-            //console.log(`🌊🌊 ${response.data.events.event}  🌊🌊`)
+
             console.log(singleEvent)
         })
 
@@ -54,14 +51,6 @@ export default function EventsTemplate(props) {
     //array of objects, iterated on in EventsDisplay.js
     const [events,setEvents] = useState(testEvents)
 
-    // let eventNames = {
-    //     events.map(event => {
-    //         <div>
-    //             <p>{event.name}</p>
-    //             <br/>
-    //         </div>
-    //     })
-    // }
 
     return (
         <div className="row margin">
