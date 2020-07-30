@@ -133,3 +133,8 @@ Nesso's meeting with Milcah -
   - attmempt to refactor after 
 
 - Check documentation for best practices 
+
+
+
+Fav schema should reference events scheime
+  event:[( type: schema.typess.objectid, ref: 'Event)]
