@@ -6,8 +6,8 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 
 
-export default function Calendar() {
-
+export default function Calendar(props) {
+    let user = props.user
     // test array of objects to mimic API response
     const testEvents = [{
         "url": "http://sandiego.eventful.com/events/lgbt-book-club-/E0-001-134699507-9?utm_source=apis&utm_medium=apim&utm_campaign=apic",
@@ -32,7 +32,7 @@ export default function Calendar() {
             //change events state to formatted response
             setEvents(response.data.events.event)
             //data visualization in browser console for debugging
-            console.log(response.data.events.event)
+            //console.log(response.data.events.event)
         })
         .catch(err => console.log('ERROR IN frontend /components/Calendar.js: '+JSON.stringify(err)))
     }, [])
@@ -46,7 +46,7 @@ export default function Calendar() {
                 <div class="col-4 offset-1">
                     <h3 id="calendar-title">Upcoming Events</h3>
                     <div id="events-display-container">
-                        <EventsDisplay events={events} />
+                        <EventsDisplay events={events} user={user} />
                     </div>
                 </div>
                 <div class="col-6">

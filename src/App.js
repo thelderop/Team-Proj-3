@@ -12,7 +12,7 @@ import Navigation from './wrappers/Navigation'
 import Register from './components/Register'
 import Footer from './wrappers/Footer'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import 'bootswatch/dist/lux/bootstrap.min.css'
+import 'bootswatch/dist/darkly/bootstrap.min.css'
 import './App.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -60,7 +60,7 @@ function App() {
       <Navigation component={Navigation} handleLogout={handleLogout} isAuthenticated={isAuthenticated} />
       <div className="react-router-logic">
         <Switch>
-          <Route path='/calendar' component={Calendar} />
+          <Route path='/calendar' render={props => <Calendar {...props} user={currentUser} />} />
           <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} user={currentUser} /> } />
           <PrivateRoute path='/favorites' component={Favorites} user={currentUser} />
           <PrivateRoute path='/profile' component={Profile} user={currentUser} />

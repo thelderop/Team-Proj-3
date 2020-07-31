@@ -7,16 +7,16 @@ const passport = require('passport')
 const bodyParser = require('body-parser')
 
 //config DB
-//const mdb = process.env.MONGO_URI
-const uri = process.env.MONGOD_URI
+const mdb = process.env.MONGO_URI
+// const uri = process.env.MONGOD_URI
 
-const MongoClient = require('mongodb').MongoClient;
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 
 const users = require('./routes/v1/users')
@@ -29,7 +29,7 @@ app.use(cors({
     optionsSuccessStatus: 200
 }))
 //body parser
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -60,7 +60,7 @@ require('./config/passport')(passport)
 
 // routes
 //mongoose.connect(mdb)
-mongoose.connect(uri)
+mongoose.connect(mdb)
     .then(() => { console.log('MongoDB Connected! Congrats!') })
     .catch(err => console.log(err))
 
