@@ -30,7 +30,21 @@ const EventsDisplay = (props) => {
             email: user.email,
             value: eventful.id
         }
-        axios.post(`${process.env.REACT_APP_API}/v1/users/add`, newFavorite)
+        axios.post(`${process.env.REACT_APP_API}v1/users/add`, newFavorite)
+        .then (res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    let handleRemove = (e) => {
+        let removeFavorite = {
+            email: user.email,
+            value: eventful.id
+        }
+        axios.post(`${process.env.REACT_APP_API}v1/users/remove`, removeFavorite)
         .then (res => {
             console.log(res)
         })
