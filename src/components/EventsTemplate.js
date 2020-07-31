@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-import EventName from './EventComponents/EventName'
+import FavoritesDisplay from './FavoritesDisplay'
 import EventLocation from './EventComponents/EventLocation'
 import axios from 'axios';
 
@@ -43,7 +43,7 @@ export default function EventsTemplate(props) {
         <div className="row margin">
             <div className="col-lg-6 offset-lg-3">
                 <h1>Event Details:</h1>
-                <EventName events={favs} />
+                <FavoritesDisplay events={favs} />
 
                 {/* <p>{JSON.stringify(events)}</p> */}
             </div>

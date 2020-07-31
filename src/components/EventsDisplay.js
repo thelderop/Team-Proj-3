@@ -1,10 +1,12 @@
 import React, { useState } from "react"
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
+
 
 const EventsDisplay = (props) => {
-
     let user = props.user
     let eventful = props.events
+    let [redirect, setRedirect] = useState(false)
 
     let [email, setEmail] = useState('')
     let handleEmail = (e) => {
@@ -31,14 +33,30 @@ const EventsDisplay = (props) => {
             email: user.email,
             value: eventful.id
         }
-        axios.post(`${process.env.REACT_APP_API}/v1/users/add`, newFavorite)
+        axios.post(`${process.env.REACT_APP_API}v1/users/add`, newFavorite)
         .then (res => {
-            console.log(res)
+            setRedirect(true)
         })
         .catch(err => {
             console.log(err)
         })
     }
+
+    let handleRemove = (e) => {
+        let removeFavorite = {
+            email: user.email,
+            value: eventful.id
+        }
+        axios.post(`${process.env.REACT_APP_API}v1/users/remove`, removeFavorite)
+        .then (res => {
+            setRedirect(true)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    if (redirect) return <Redirect to='/calendar' />
 
     // let handleAction = `${process.env.REACT_APP_API}/v1/users/add`
 
@@ -59,11 +77,16 @@ const EventsDisplay = (props) => {
                     <input hidden type="text" name="value" value={eventful.id} onChangle={handleValue}/>
                     <button type="submit" class="btn btn-info">Add to Favorites</button>
                 </form>
-
+                <br />
+                <form method="PUT" encType="application/x-www-form-urlencoded" onSubmit={handleRemove} >
+                    <input hidden type="email" name="email" email={user.email} onChange={handleEmail}/>
+                    <input hidden type="text" name="value" value={eventful.id} onChange={handleValue}/>
+                    <button type="submit" class="btn btn-info">Remove from Favorites</button>
+                </form>
             </div>
-            </div>
-        )
-    })
+        </div>
+            )
+        })   
 
     return (
         <div className="eventDisplay">
