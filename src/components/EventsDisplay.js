@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
+
 
 const EventsDisplay = (props) => {
     let user = props.user
     let eventful = props.events
+    let [redirect, setRedirect] = useState(false)
 
     let [email, setEmail] = useState('')
     let handleEmail = (e) => {
@@ -32,7 +35,7 @@ const EventsDisplay = (props) => {
         }
         axios.post(`${process.env.REACT_APP_API}v1/users/add`, newFavorite)
         .then (res => {
-            console.log(res)
+            setRedirect(true)
         })
         .catch(err => {
             console.log(err)
@@ -46,12 +49,14 @@ const EventsDisplay = (props) => {
         }
         axios.post(`${process.env.REACT_APP_API}v1/users/remove`, removeFavorite)
         .then (res => {
-            console.log(res)
+            setRedirect(true)
         })
         .catch(err => {
             console.log(err)
         })
     }
+
+    if (redirect) return <Redirect to='/calendar' />
 
     // let handleAction = `${process.env.REACT_APP_API}/v1/users/add`
 
