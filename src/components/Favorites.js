@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-import EventsDisplay from './EventsDisplay'
+import EventName from './EventComponents/EventName'
 import axios from 'axios';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 
 
-export default function Favorites(props) {
+export default function Calendar(props) {
+    let user = props.user
 
     // test array of objects to mimic API response
     const testEvents = [{
@@ -14,14 +15,27 @@ export default function Favorites(props) {
         "id": "E0-001-134699507-9",
         "city_name": "San Diego"
     }]
+    // backup axios call in case things get hosed
+    let backupCall = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/get?app_key=${process.env.EVENTFUL_KEY}&id=${user.favorite}`
 
     //calls API on page render
     useEffect(() => {
-        axios.get(`https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&keywords=concerts&location=Seattle&date=Future`)
+        console.log(user)
+        //set events state to wait message while axios call gets data
+        setEvents([{"title": "Fetching Events, please wait..."}])
+        //variable to be set on page render, write to this variable to adjust search parameters (querys and responses, see eventful documentation)
+        let apiUrl = `http://api.eventful.com/json/events/get?app_key=${process.env.EVENTFUL_KEY}&id=${user.favorite}`
+        //ideally, we will set apiUrl to a useState(), to allow updating displayed data without reloading page
+        axios.get(backupCall)
+        //promise function, 'response' is what we're sent with axios.get(apiUrl), after it's arrived to our frontend server, JS will continue processing.
         .then(response => {
-            console.log(`${process.env.EVENTFUL_KEY}`)
+            console.log(user.favorite)
+            //test to debug .env)
+            // console.log(`${process.env.EVENTFUL_KEY}`)
+            //change events state to formatted response
             setEvents(response.data.events.event)
-            console.log(response.data.events.event)
+            //data visualization in browser console for debugging
+            //console.log(response.data.events.event)
         })
         .catch(err => console.log('ERROR IN frontend /components/Calendar.js: '+JSON.stringify(err)))
     }, [])
@@ -37,20 +51,21 @@ export default function Favorites(props) {
     //         </div>
     //     })
     // }
-
+    
     return (
         <div className="Calendar">
-            <div class="row margin">
+            <div class="row my-5">
                 <div class="col-4 offset-1">
                     <h3 id="calendar-title">Upcoming Events</h3>
                     <div id="events-display-container">
-                        {/* <EventsDisplay events={events} /> */}
+                        <EventName events={events} user={user} />
                     </div>
                 </div>
                 <div class="col-6">
                     <FullCalendar
                     plugins={[ dayGridPlugin ]}
                     initialView="dayGridMonth"
+                    
                     />
                 </div>
             </div>
