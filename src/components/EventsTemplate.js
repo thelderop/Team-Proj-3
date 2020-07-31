@@ -25,10 +25,12 @@ export default function EventsTemplate(props) {
         setFavs(defaultFavsState)
         axios.get(`${process.env.REACT_APP_API}/v1/favorites`)
         .then(response => {
+
             console.log(response.data)
             console.log(response.data[0].eventId)
             setFavs(response.data[0].eventId)
             console.log(favs)
+
         })
         .catch(err => console.log('ERROR IN frontend /components/Calendar.js: '+JSON.stringify(err)))
     }, [])
@@ -36,14 +38,6 @@ export default function EventsTemplate(props) {
     //array of objects, iterated on in EventsDisplay.js
     const [favs,setFavs] = useState(testFavs)
 
-    // let eventNames = {
-    //     events.map(event => {
-    //         <div>
-    //             <p>{event.name}</p>
-    //             <br/>
-    //         </div>
-    //     })
-    // }
 
     return (
         <div className="row margin">

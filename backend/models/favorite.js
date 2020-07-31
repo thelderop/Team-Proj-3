@@ -5,9 +5,6 @@ const Schema = mongoose.Schema;
 
 //favorites Schema
 const FavoriteSchema = new Schema({
-    // event: [{ type: Schema.Types.ObjectId, ref: 'Event' }]
-
-
 
     eventId: {
         type: String,
