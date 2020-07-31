@@ -7,16 +7,16 @@ const passport = require('passport')
 const bodyParser = require('body-parser')
 
 //config DB
-const mdb = process.env.MONGO_URI
-// const uri = process.env.MONGOD_URI
+//const mdb = process.env.MONGO_URI
+const uri = process.env.MONGOD_URI
 
-// const MongoClient = require('mongodb').MongoClient;
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+const MongoClient = require('mongodb').MongoClient;
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 
 const users = require('./routes/v1/users')
@@ -60,7 +60,7 @@ require('./config/passport')(passport)
 
 // routes
 //mongoose.connect(mdb)
-mongoose.connect(mdb)
+mongoose.connect(uri)
     .then(() => { console.log('MongoDB Connected! Congrats!') })
     .catch(err => console.log(err))
 
