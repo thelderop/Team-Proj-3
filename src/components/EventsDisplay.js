@@ -78,7 +78,7 @@ const EventsDisplay = (props) => {
 
     return (
         <div className="eventDisplay">
-            {eventsList}
+            
         </div>
     );
 }
