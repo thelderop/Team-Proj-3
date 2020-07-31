@@ -100,7 +100,7 @@ router.post('/login', (req, res) => {
                     //if we are good to go sign out jwt
                     if (isMatch) {
                         //create token payload
-                        const payload = { id: user.id, name: user.name, email: user.email, zipcode: user.zipcode, createdAt: user.createdAt }
+                        const payload = { id: user.id, name: user.name, email: user.email, zipcode: user.zipcode, createdAt: user.createdAt, favorite: user.favorite }
                         //sign the token
                         jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 3600 }, (err, token) => {
                             res.json({ success: true, token: 'Bearer ' + token })
@@ -114,6 +114,18 @@ router.post('/login', (req, res) => {
 
 
 })
+
+
+//add fav
+router.post('/add', (req, res) => {
+    User.findOneAndUpdate(
+        { email: req.body.email },
+        { $push: {favorite: req.body.value} }
+    ).then(updatedFavorite => {
+        res.send(updatedFavorite)
+    }).catch(err => console.error(err))
+})
+
 
 // GET if already logged in, set user data to current
 

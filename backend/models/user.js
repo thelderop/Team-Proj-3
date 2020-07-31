@@ -22,6 +22,9 @@ const UserSchema = new Schema({
     type: Number,
     required: true,
   },
+  favorite: [{ 
+    type: String, 
+  }]
   // DOB: {
   //   type: Number,
   //   required: true,
@@ -33,7 +36,7 @@ const UserSchema = new Schema({
 );
 
 
-module.exports = User = mongoose.model('users', UserSchema);
+module.exports = User = mongoose.model('User', UserSchema);
 
 
 // const mongoose = require('mongoose')
