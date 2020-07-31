@@ -61,6 +61,7 @@ const EventsDisplay = (props) => {
                 </form>
 
             </div>
+            </div>
         )
     })
 
