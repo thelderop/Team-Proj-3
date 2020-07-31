@@ -55,7 +55,6 @@ function App() {
     }
   }
 
-
   return (
     <div className='error'>
       <Navigation component={Navigation} handleLogout={handleLogout} isAuthenticated={isAuthenticated} />

@@ -26,18 +26,6 @@ export default function Favorites(props) {
     // backup axios call in case things get hosed
     let backupUrl = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=NFRS6FwLVhcNKTWD&location=90210`
 
-    //calls API on page render
-    // useEffect(() => {
-    //     console.log(user)
-    //     setEvents([{"title": "Fetching Events, please wait..."}])
-    //     axios.get(backupUrl)
-    //     .then(response => {
-    //         console.log(user.favorite)
-    //         setEvents(response.data.events.event)
-    //     })
-    //     .catch(err => console.log('ERROR IN frontend'+JSON.stringify(err)))
-    // }, [])
-    
     return (
         <div className="Calendar">
             <div class="row my-5">

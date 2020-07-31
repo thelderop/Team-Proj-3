@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import axios from 'axios'
 
 const EventsDisplay = (props) => {
+
     let user = props.user
     let eventful = props.events
 
@@ -71,15 +72,9 @@ const EventsDisplay = (props) => {
                     <input hidden type="text" name="value" value={eventful.id} onChange={handleValue}/>
                     <button type="submit" class="btn btn-info">Add to Favorites</button>
                 </form>
-                <form method="PUT" encType="application/x-www-form-urlencoded" onSubmit={handleRemove} >
-                    <input hidden type="email" name="email" email={user.email} onChange={handleEmail}/>
-                    <input hidden type="text" name="value" value={eventful.id} onChange={handleValue}/>
-                    <button type="submit" class="btn btn-info">Remove from Favorites</button>
-                </form>
             </div>
-        </div>
-            )
-        })   
+        )
+    })
 
     return (
         <div className="eventDisplay">

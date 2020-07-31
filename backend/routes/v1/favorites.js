@@ -113,28 +113,29 @@ const db = require('../../models')
 /*------------ REWRITE -----------*/
 
 // GET - return a page with all favorites
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     db.Favorite.find()
-    .then(favorite => {
-      res.send(favorite)
-    }) 
+        .then(favorite => {
+            res.send(favorite)
+        })
 })
 
 // POST - receive the name of a pokemon and add it to the database
-router.post('/add', function(req, res) {
+router.post('/add', function (req, res) {
     db.Favorite.create({
         eventId: req.body.eventId
     })
-    .then(favorite => {
-        console.log(favorite)
-        db.User.findOneAndUpdate({
-            email: req.body.email },
-            {$push: {favorite: favorite}}
-        ).then(function (event) {
-            console.log(event)
-            res.send(event)
+        .then(favorite => {
+            console.log(favorite)
+            db.User.findOneAndUpdate({
+                email: req.body.email
+            },
+                { $push: { favorite: favorite } }
+            ).then(function (event) {
+                console.log(event)
+                res.send(event)
+            })
         })
-    })
 })
 
 
