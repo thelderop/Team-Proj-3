@@ -10,7 +10,7 @@ export default function Favorites(props) {
 
     //calls database on page render
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API}/v1/users/`, {
+        axios.get(`${process.env.REACT_APP_API}v1/users/`, {
             headers: {"accept":"application/json",
             'content-type':'application/json'
             }

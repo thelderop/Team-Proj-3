@@ -23,7 +23,7 @@ export default function EventsTemplate(props) {
     useEffect(() => {
         console.log(props)
         setFavs(defaultFavsState)
-        axios.get(`${process.env.REACT_APP_API}/v1/favorites`)
+        axios.get(`${process.env.REACT_APP_API}v1/favorites`)
         .then(response => {
 
             console.log(response.data)

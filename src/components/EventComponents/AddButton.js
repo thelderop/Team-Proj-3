@@ -5,7 +5,7 @@ export default function AddButton(props) {
     const handleAdd = e => {
         e.preventDefault()
 
-        axios.delete(`${process.env.REACT_APP_API}/favorites/${props.id}`)
+        axios.delete(`${process.env.REACT_APP_API}favorites/${props.id}`)
             .then(response => {
                 if (response.status === 200) {
                     props.refresh(true)
